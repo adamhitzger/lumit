@@ -82,7 +82,7 @@ export const content = {
         header: {
             header: "Nové auto? Zkuste to s ",
             endHeader: "Lumit",
-            firstInfo: "přes 600 prodaných aut",
+            firstInfo: "přes 6000 prodaných aut",
             secInfo: "nabízíme nebouraná auta se zárukou",
             thirdInfo: "Zajišťujeme přepravu automobilů z celé EU",
             btnText1: "O nás",

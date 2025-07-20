@@ -1,6 +1,6 @@
 "use client"
 
-import { ActionRes, CarWithPhotos, CarItem, SanityCar} from "@/types";
+import { ActionRes, CarWithPhotos, SanityCar} from "@/types";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { ArrowRight, Fuel, Gauge, HandCoins } from "lucide-react";

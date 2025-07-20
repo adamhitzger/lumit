@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${inSerif.variable} antialiased bg-gray-200`}
+        className={`${geistSans.variable} ${inSerif.variable} antialiased bg-gray-200 overflow-x-hidden`}
       >
         <Suspense>
         <Navbar/>

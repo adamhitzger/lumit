@@ -58,14 +58,23 @@ function login(sessionId: string, hash: string, softwareKey: string): Promise<Lo
   });
 }
 
-export function listOfCars(sessionId: string, imported: 'all' | 'imported' = 'all', offset = 0, limit = 20): Promise<ListOfCarsOutput> {
+export function listOfCars(sessionId: string, imported: 'all' | 'imported' = 'all', offset = 0, limit: number=-1): Promise<ListOfCarsOutput> {
   return new Promise((resolve, reject) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    client.methodCall('listOfCars', [sessionId, imported, offset, limit], (err: any 
+    if(limit === -1){
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    client.methodCall('listOfCars', [sessionId, imported, offset], (err: any 
       , result: ListOfCarsOutput) => {
       if (err) return reject(err);
       resolve(result);
     });
+    }else {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    client.methodCall('listOfCars', [sessionId, imported, offset, limit && limit], (err: any 
+      , result: ListOfCarsOutput) => {
+      if (err) return reject(err);
+      resolve(result);
+    });
+    }
   });
 }
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -76,16 +85,6 @@ export function getSautoCar(sessionId: string, carId: number): Promise<any> {
       ) => {
       if (err) return reject(err);
       resolve(result);
-    });
-  });
-}
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function listOfPhotos(sessionId: string, carId: number, offset = 0, limit = 50): Promise<any[]> {
-  return new Promise((resolve, reject) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    client.methodCall('listOfPhotos', [sessionId, carId, offset, limit], (err: any, result: any) => {
-      if (err) return reject(err);
-      resolve(result.output.list_of_photos);
     });
   });
 }
@@ -122,11 +121,10 @@ export async function getSautoCardCar(offset:number =0,limit: number = 20): Prom
     const rawPhotos = await sanityFetch<CarWithPhotos>({ query: getCar, params: {id} });
     const photos: string[] = []
     let title: string="";
-    if(rawPhotos != null){
+    if(rawPhotos?.photos.length >0){
     title = rawPhotos.title
     for(let i =0; i<rawPhotos.photos.length;i++) {
       photos.push(rawPhotos.photos[i]);
-    }
     }
     const carWithPhotos: CarWithPhotos = {
       ...car.output,
@@ -135,8 +133,9 @@ export async function getSautoCardCar(offset:number =0,limit: number = 20): Prom
     }
    
      cars.push(carWithPhotos);
+    }
+    
   }
-  //console.log(cars)
   return{
     cars,
   }

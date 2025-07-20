@@ -1,4 +1,4 @@
-import Header, { HeaderSkeleton } from "@/components/header";
+import Header from "@/components/header";
 import { Suspense } from "react";
 import About from "@/components/about";
 import Services from "@/components/services";
@@ -12,12 +12,12 @@ import NewestCars from "@/components/cars";
 
 export default async function Home() {
  const about: AboutType  = await sanityFetch({ query: getAbout });
- const cars = await getSautoCardCar()
+ const cars = await getSautoCardCar(0,100)
  console.log("Length",cars.cars.length)
  const reviews = await sanityFetch<Reviews>({query: reviews_query});
  cars.cars.reverse();
  return (
-      <Suspense fallback={<HeaderSkeleton/>}>
+      <Suspense>
         <Header cars={cars.cars.slice(0,9)}/>
         <NewestCars cars={cars.cars.slice(10,20)}/>
         <About images={about}/>

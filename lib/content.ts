@@ -19,7 +19,7 @@ export const content = {
             },
             {
                 name: "Kontakt",
-                link: "/#konatkt",
+                link: "/#kontakt",
             },
         ],
         footer: {
@@ -45,7 +45,7 @@ export const content = {
                     },
                     {
                         name: "Kontakt",
-                        link: "/#konatkt",
+                        link: "/#kontakt",
                     },
                 ],
             },

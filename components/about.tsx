@@ -34,7 +34,7 @@ export function Slide({media, isImage}: {media:string, isImage:boolean}){
                     className="z-0 rounded-xl"
                     onLoad={() => setIsLoaded(true)}
                       />: 
-                      <video controls>
+                      <video autoPlay playsInline className="rounded-xl">
                         <source src={media} />
                       </video>}
   </div>
@@ -66,7 +66,7 @@ export default function About({images}: {images: Type}){
       console.log(count)
     return(
         <section id="onas" className=" text-black left-0 w-full h-full backdrop-blur-xl z-10 flex flex-col md:flex-row-reverse p-5 gap-5">
-              <div className="w-full md:w-1/2 h-fit sm:h-full text-right flex flex-col justify-center space-y-4">
+              <div className="w-full md:w-1/2 h-auto text-right flex flex-col justify-center space-y-6">
                   <h1 className="font-serif text-5xl md:text-7xl">{obsah.about.header}<span className="text-red-600 ">{obsah.about.endHeader}</span></h1>
                   <p>
                 {obsah.about.text}

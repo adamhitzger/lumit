@@ -47,11 +47,11 @@ export default function Header({cars}: {cars: CarWithPhotos[]}){
           setCurrent(api.selectedScrollSnap() + 1)  
         })
       }, [api])
-      console.log(count)
+      console.log(count, cars[1])
     return(
         <section className=" text-black left-0 w-full h-full backdrop-blur-xl z-10 flex flex-col sm:flex-row p-5 gap-5">
-              <div className="w-full sm:w-1/2 h-fit sm:h-full flex flex-col justify-center space-y-4">
-                  <h1 className="font-serif text-5xl md:text-7xl">{obsah.header.header}<span className="text-red-600 ">{obsah.header.endHeader}</span></h1>
+              <div className="w-full sm:w-1/2 h-auto flex flex-col justify-center space-y-6">
+                  <h1 className="font-serif text-5xl text-center md:text-7xl">{obsah.header.header}<span className="text-red-600 ">{obsah.header.endHeader}</span></h1>
                   <div className="grid grid-cols-3 text-center gap-4 w-full">
                       <div className="w-full flex flex-col items-center">
                           <Car className="w-12 h-12"/>
@@ -82,29 +82,29 @@ export default function Header({cars}: {cars: CarWithPhotos[]}){
                   </div>
               </div>
 
-              <div className="w-full h-fit sm:w-1/2 sm:my-auto border-2 ">
+              <div className="w-full h-fit sm:w-1/2 sm:my-auto">
                   <Carousel 
                   setApi={setApi} 
-                  className="w-full"
+                  className="w-full border-2"
                   plugins={[plugin.current]}
                  >
                     <CarouselContent>
                   {cars.map((c: CarWithPhotos, index) => (
                     <CarouselItem key={index}>
-              <div className="relative max-w-xl h-[200px] lg:h-[420px]">
+              <div className="relative max-w-xl  h-[200px] mx-auto lg:h-[420px]">
                 <Image
                   src={c.photos[0]}
                   alt={`Lumit, s.r.o - ${c.title}`}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-xl"
                   sizes="(max-width: 640px) 100vw, 50vw"
                   priority={index === 0}
                 />
-                <div className="absolute inset-0 flex flex-col justify-center items-center p-4 py-7 z-10 bg-black/40">
+                <div className="absolute inset-0 flex rounded-xl flex-col justify-center items-center p-4 py-7 z-10 bg-black/40">
                   <span className="mb-5 text-3xl font-bold text-white drop-shadow-lg">
                     {c.title && c.title}
                   </span>
-                  <Link href={`/cars/${c.car_id}?lang=${lang}`} className="w-40 flex items-center">
+                  <Link href={`/auta/${c.car_id}?lang=${lang}`} className="w-40 flex items-center">
                     <Button variant="secondary">
                       {obsah.header.view} 👀
                       <ArrowRight />

@@ -19,7 +19,7 @@ export default function Services(){
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                {obsah.services.services.map((s,i) => (
                 <div key={i} className="relative bg-gray-300 w-full min-h-64 rounded-xl">
-                    <div className="absolute top-0 left-0 p-1 h-full flex flex-col justify-evenly px-5 rounded-xl backdrop-blur-2xl z-20">
+                    <div className="absolute top-0 left-0 p-1 h-full flex flex-col backdrop-blur-2xl backdrop_filter justify-evenly px-5 rounded-xl z-20">
                     <h1 className="text-3xl lg:text-4xl font-serif">{s.heading}</h1>
                     <p className="text-sm lg:text-base">
                       {s.text}

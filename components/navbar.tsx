@@ -1,6 +1,6 @@
 "use client"
 
-import { useSearchParams } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
 import Image from "next/image";
 import Link from "next/link";
 import {content} from "@/lib/content"
@@ -16,7 +16,7 @@ export default function Navbar(){
     const lang = params.get("lang") || "cs";
     const en = lang === "en"
     const obsah = content[lang as keyof typeof content] || content.cs
-    
+    const pathname = usePathname()
     return(
         <nav className="w-full flex flex-row bg-black p-3 justify-between items-center text-white">
             <Link href={en ? "/?lang=en" : "/?lang=cs"}>
@@ -29,7 +29,7 @@ export default function Navbar(){
                         {l.name}
                     </Link>
                 ))}
-               <Link href={lang === "cs" ? "/?lang=en" : "/?lang=cs"} className="rounded-full bg-white h-fit px-2 py-1 text-2xl ">
+               <Link href={lang === "cs" ? `${pathname}?lang=en` : `${pathname}?lang=cs`} className="rounded-full bg-white h-fit px-2 py-1 text-2xl ">
             {en ?"🇨🇿": "🇬🇧" }
         </Link> 
             </div>

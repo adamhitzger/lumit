@@ -26,6 +26,7 @@ import {
     CarouselNext,
     CarouselPrevious
   } from "@/components/ui/carousel"
+  
 const actionState: ActionRes<ContactType> = {
     success: false,
     message: "",
@@ -76,14 +77,14 @@ function CarCard({car}: {car: CarWithPhotos}){
     )
 }
 
-export function SignleCar({car, cars, images}: {car: CarWithPhotos, cars: CarItem[], images:SanityCar}){
+export function SignleCar({car,  images}: {car: CarWithPhotos, images:SanityCar}){
     const params = useSearchParams();
        const lang = params.get("lang") || "cs";
        const en = lang === "en"
     const obsah = content[lang as keyof typeof content].car || content.cs.car 
     const [state, action, isPending] = useActionState(sendContact, actionState)
     const obsah2 = content[lang as keyof typeof content] || content.cs
-    console.log(car, cars.length)
+    console.log(car)
  useEffect(() => {
         if (!state.success && state.message) {
             toast.error(state.message);
@@ -259,22 +260,6 @@ export function SignleCar({car, cars, images}: {car: CarWithPhotos, cars: CarIte
             
             </div>
                 
-        </section>
-        
-        <section className="w-full p-5 flex flex-col  space-y-3">
-            <p className="text-5xl font-serif"> {obsah.heading} <span className="text-red-500">{obsah.endHeading}</span></p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid grid-col-3 gap-4">
-                {cars.map((_, i:number) => (
-                    i<3?
-                    <CarCard car={car} key={i}/>:null
-                ))}
-            </div>
-            <Link href={"/auta"}  className="mx-auto">
-                      <Button size={"sm"} >
-                          {obsah.btnText}
-                        <ArrowRight/>
-                      </Button>
-                      </Link>
         </section>
   
        </>

@@ -80,10 +80,10 @@ export const content = {
         tel2: "+420 608 170 008"
         },
         header: {
-            header: "Nové auto? Zkuste to s ",
-            endHeader: "Lumit",
+            header: "Vítejte na stránkách ",
+            endHeader: "Lumit company s.r.o.",
             firstInfo: "přes 6000 prodaných aut",
-            secInfo: "nabízíme nebouraná auta se zárukou",
+            secInfo: "nabízíme prověřená vozidla",
             thirdInfo: "Zajišťujeme přepravu automobilů z celé EU",
             btnText1: "O nás",
             btnLink1: "/#onas",

@@ -66,20 +66,7 @@ export default function Header({cars}: {cars: CarWithPhotos[]}){
                           <p>{obsah.header.thirdInfo}</p>
                       </div>
                   </div>
-                  <div className="w-full grid grid-cols-2 justify-items-center gap-4">
-                      <Link href={obsah.header.btnLink1}>
-                      <Button size={"sm"}>
-                          {obsah.header.btnText1}
-                        <ArrowRight/>
-                      </Button>
-                      </Link>
-                      <Link href={obsah.header.btnLink2}>
-                      <Button size={"sm"}>
-                          {obsah.header.btnText2}
-                        <ArrowRight/>
-                      </Button>
-                      </Link>
-                  </div>
+                 
               </div>
 
               <div className="w-full h-fit sm:w-1/2 sm:my-auto">

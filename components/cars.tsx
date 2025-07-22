@@ -324,9 +324,6 @@ return(
 <section className=" text-black left-0 w-full h-full backdrop-blur-xl z-10 flex flex-col sm:flex-row p-5 gap-5">
               <div className="w-full h-fit sm:h-full flex flex-col justify-center space-y-4">
                   <h1 className="font-serif text-left text-5xl md:text-7xl">{carsContent.heading2}<span className="text-red-600 "> {carsContent.endHeader2}</span></h1>
-<p>
-                {carsContent.text2}
-                  </p>
                    <header className="w-full flex text-black flex-wrap text-lg">
             
         </header>

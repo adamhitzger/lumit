@@ -12,7 +12,7 @@ export default function Sluzby(){
         
         const obsah = content[lang as keyof typeof content] || content.cs
         const leasingovky:string[]=[
-            "arval.png","ayvens.png","carnext.png","cebianet.png","leaseplan.png","skofin.png"
+            "arval.png","ayvens.png","cebianet.png","skofin.png"
         ] 
     return(
         <>

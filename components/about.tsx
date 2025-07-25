@@ -16,23 +16,20 @@ import { useSearchParams } from "next/navigation"
 import { Button } from "./ui/button"
 import Link from "next/link"
 import { About as Type } from "@/types"
-import { Skeleton } from "./ui/skeleton"
 
 export function Slide({media, isImage}: {media:string, isImage:boolean}){
   const [isLoaded, setIsLoaded] = useState(false)
+  console.log(isLoaded)
   return(
     <div>
-      {!isLoaded && isImage && (
-<Skeleton className="w-full h-[256px] rounded-xl"/> 
-      )}
-     
+    
     {isImage ? <Image 
                     src={media} 
                     alt={"Lumit s.r.o."} 
                      width={1024}
                     height={1024}
                     className="z-0 rounded-xl"
-                    onLoad={() => setIsLoaded(true)}
+                    onLoadingComplete={() => setIsLoaded(true)}
                       />: 
                       <video autoPlay controls playsInline className="rounded-xl">
                         <source src={media} />

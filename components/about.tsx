@@ -34,7 +34,7 @@ export function Slide({media, isImage}: {media:string, isImage:boolean}){
                     className="z-0 rounded-xl"
                     onLoad={() => setIsLoaded(true)}
                       />: 
-                      <video autoPlay playsInline className="rounded-xl">
+                      <video autoPlay controls playsInline className="rounded-xl">
                         <source src={media} />
                       </video>}
   </div>
@@ -50,7 +50,7 @@ export default function About({images}: {images: Type}){
     const [current, setCurrent] = useState(2)
     const [
       count, 
-      setCount] = useState(2)
+      setCount] = useState(0)
     useEffect(() => {
         if (!api) {
           return
@@ -91,7 +91,7 @@ export default function About({images}: {images: Type}){
               <div className="w-full h-fit md:w-1/2 sm:my-auto">
                   <Carousel 
                   setApi={setApi} 
-                  className="w-full sm:w-4/5 mx-auto "
+                  className="w-full sm:w-4/5 mx-auto min-h-[400px] "
                  >
                     <CarouselContent className="h-fit">
                   {images.items.map((i, index) => (
@@ -106,7 +106,7 @@ export default function About({images}: {images: Type}){
                   <CarouselNext className="bg-black hidden sm:flex"/>
                    <div className="flex flex-row space-x-5 py-2 text-center text-sm text-black justify-center">
                   {images.items.map((_, i) => (
-                      <div key={i} className={`w-12 h-1.5 rounded-xl  ${i === current-1 ? "bg-black ": "bg-white"}`}></div>
+                      <div key={i} onClick={() => setCurrent(i)} className={`w-12 h-1.5 rounded-xl  ${i === current-1 ? "bg-black ": "bg-white"}`}></div>
                   ))}
                  </div>
                   </Carousel>

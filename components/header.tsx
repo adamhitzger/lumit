@@ -51,7 +51,7 @@ export default function Header({cars}: {cars: CarWithPhotos[]}){
     return(
         <section className=" text-black left-0 w-full h-full backdrop-blur-xl z-10 flex flex-col sm:flex-row p-5 gap-5">
               <div className="w-full sm:w-1/2 h-auto flex flex-col justify-center space-y-6">
-                  <h1 className="font-serif text-5xl text-center md:text-7xl">{obsah.header.header}<span className="text-red-600 ">{obsah.header.endHeader}</span></h1>
+                  <h1 className="font-serif text-5xl text-center md:text-7xl">{obsah.header.header}<span className="text-red-600 ">{obsah.header.endHeader}</span> company s.r.o.</h1>
                   <div className="grid grid-cols-3 text-center gap-4 w-full">
                       <div className="w-full flex flex-col items-center">
                           <Car className="w-12 h-12"/>

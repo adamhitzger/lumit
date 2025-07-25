@@ -22,7 +22,7 @@ export default function Footer(){
                     <h2 className="font-serif text-4xl">{l.name}</h2>
                     <div className="w-full flex flex-col space-y-2">
                         {l.links?.map((j, i:number) => (
-                            <Link key={i} href={j.link} className="text-xl font-light">
+                            <Link key={i} href={j.link ?? ""} className="text-xl font-light">
                             {j.name}
                             </Link>
                         ))}

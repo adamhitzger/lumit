@@ -58,11 +58,14 @@ export const content = {
                     },
                     {
                         name: "Dovozy",
-                        link:"/sluzby#dovozy"
                     },
                     {
                         name: "Autozastavárna",
                         link:"/sluzby#zastavarna"
+                    },
+                     {
+                        name: "Pojištění a leasing",
+                        link:"/sluzby#leasing"
                     },
                 ],
             },
@@ -81,7 +84,7 @@ export const content = {
         },
         header: {
             header: "Vítejte na stránkách ",
-            endHeader: "Lumit company s.r.o.",
+            endHeader: "Lumit",
             firstInfo: "přes 6000 prodaných aut",
             secInfo: "nabízíme prověřená vozidla",
             thirdInfo: "Zajišťujeme přepravu automobilů z celé EU",
@@ -138,7 +141,13 @@ export const content = {
                     text: "​Nabízíme individuální dovoz vozidel ze zahraničí podle vašich požadavků. vyřídíme vše pořrebné od přepravy po registraci",
                     link: "/sluzby#zastavarna"
                 },
-            ]
+                 {
+                    heading: "Pojištění a leasing",
+                    text: "Nabízíme moderní pojištění vozů včetně povinného ručení havarijního i komplexního balíčku a také výhodný leasing nebo úvěr na auta a motorky do 11 let",
+                    link: "/sluzby#leasing"
+                },
+            ],
+            
         },
         reviews: {
             heading:"Hodnocení",
@@ -217,6 +226,25 @@ export const content = {
                     text: "Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze nehavarovaná vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
                     img: "/zastavarna.jpeg",
                 }
+            ],
+            pojisteni: "Pojištění a",
+            accordion: [
+                {
+                    heading: "🛡️  Povinné ručení",
+                    text: "Povinné ručení je pojištění, které je ze zákona povinen uzavřít vlastník vozidla. Sjednat povinné ručení neboli zákonné pojištění odpovědnosti z provozu vozidla je základní povinností každého majitele motorového vozidla. V případě nesplnění této povinnosti, hrozí majiteli pokuta až do výše 20 000 Kč. Navíc ten, kdo neuzavře povinné ručení a způsobí vozidlem druhému škodu na zdraví nebo na majetku, bude muset uhradit veškerou škodu z vlastních prostředků. Základním smyslem povinné ručení je zajistit pojistnou ochranu škody spáchané motorovým vozidlem. Povinné ručení Vám ale nikdy neuhradí škody na vašem voze. Proti škodám, které Vašemu vozu způsobí živly, vzniknou v důsledku havárie, odcizení nebo neoprávněného užití vozidla, Vás ochrání havarijní pojištění. To sice není povinné, ale uzavřít je se určitě vyplatí hlavně u novějších vozidel, kde se i oprava banality může vyšplhat do desítek tisíc korun."
+                },
+                {
+                    heading: "🚗 Havarijní pojištění",
+                    text: "Havarijní pojištění je určeno majitelům motorových vozidel. Protože v případě zavinění dopravní nehody druhou stranou je škoda hrazena z povinného ručení viníka, je výhodné zejména pro často havarující řidiče. Způsobit dopravní nehodu může každý, přestože většina řidičů minimalizuje možnost zavinění nehody bezpečnou jízdou. Škoda pak dosahuje řádů desetitisíců až statisíců (u luxusních automobilů i milionů). Pokud není automobil pojištěný, veškeré náklady na opravu (či pořízení nového) musí uhradit majitel. Pokud však automobil havarijně pojištěný je, jeho vlatník zaplatí náklady pouze do výše spoluúčasti."
+                },
+                {
+                    heading: "🔒 Komplexní pojištění",
+                    text: "Komplexní pojištění je spojení povinného ručení, havarijního pojištění vozidla a doplňkových připojištění v jediném pojistném produktu."
+                },
+                {
+                    heading: "💼 Leasing a úvěr",
+                    text: "Nabízíme sjednat leasing, úvěr na všechny tipy automobilů a motocyklů, až do stáří 11 let, od předních leasingových společností na našem trhu."
+                }
             ]
         }
     },
@@ -286,8 +314,8 @@ export const content = {
                             link:"/sluzby#zastavarna?lang=en"
                         },
                         {
-                            name: "Car Wash",
-                            link:"/sluzby#cisteni?lang=en"
+                            name: "Leasing",
+                            link:"/sluzby#leasing?lang=en"
                         }
                     ],
                 },
@@ -390,7 +418,13 @@ export const content = {
             text: "We offer personalized import of vehicles from abroad according to your requirements. We handle everything from transport to registration.",
             link: "/sluzby#zastavarna?lang=en"
         },
-    ]
+         {
+                    heading: "Insurance and Leasing",
+text: "We offer modern vehicle insurance including liability, comprehensive and full coverage packages, as well as advantageous leasing or loans for cars and motorcycles up to 11 years old",
+link: "/sluzby#leasing"
+                },
+    ],
+    
 },
 reviews: {
     heading: "Customer",
@@ -443,7 +477,26 @@ sluzby: {
             text: "We have been active on the market since 1993, specializing in the import and sale of passenger and commercial vehicles. We only offer non-accident vehicles with guaranteed origin, condition, and mileage. Most of our vehicles come from reputable leasing companies such as Arval, LeasePlan, and others, from operational leases or directly from authorized dealerships. Thanks to this, we provide our customers with assurance of quality and transparency when choosing their new vehicle.",
             img: "/zastavarna.jpeg",
         }
-    ]
+    ],
+    pojisteni: "Insurance and",
+accordion: [
+    {
+        heading: "🛡️ Mandatory Liability Insurance",
+        text: "Mandatory liability insurance is required by law for all vehicle owners. Concluding this insurance, also known as compulsory vehicle liability insurance, is a basic duty of every motor vehicle owner. Failure to comply with this obligation can result in a fine of up to CZK 20,000. Moreover, anyone who does not have this insurance and causes damage to another person's health or property with their vehicle will have to cover all the costs from their own funds. The main purpose of liability insurance is to provide coverage for damage caused by the vehicle. However, this insurance never covers damage to your own car. To protect against damage to your vehicle caused by natural events, accidents, theft, or unauthorized use, you need comprehensive (collision) insurance. Although not mandatory, it is highly recommended, especially for newer vehicles, as even minor repairs can cost tens of thousands of crowns."
+    },
+    {
+        heading: "🚗 Comprehensive (Collision) Insurance",
+        text: "Comprehensive insurance is designed for vehicle owners. Since, in the case of an accident caused by another driver, the damage is covered by the other party’s liability insurance, comprehensive coverage is especially beneficial for drivers who want to be protected in all scenarios. Anyone can cause an accident, even if most drivers minimize risks by driving safely. Repair costs can easily reach tens or hundreds of thousands of crowns (or even millions for luxury cars). Without comprehensive coverage, the owner must pay all repair or replacement costs themselves. With comprehensive insurance, the owner only pays up to the agreed deductible."
+    },
+    {
+        heading: "🔒 Full Coverage Insurance",
+        text: "Full coverage insurance combines mandatory liability insurance, comprehensive (collision) coverage, and additional optional insurance in a single policy."
+    },
+    {
+        heading: "💼 Leasing and Loans",
+        text: "We offer leasing and loans for all types of cars and motorcycles, up to 11 years old, in cooperation with leading leasing companies on the market."
+    }
+]
 }
     }
 }

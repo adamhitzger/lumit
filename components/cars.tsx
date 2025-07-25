@@ -16,8 +16,8 @@ import { Label } from "./ui/label";
 import { ContactType } from "@/lib/schemas";
 import toast from "react-hot-toast";
 import { Textarea } from "./ui/textarea";
-import { Suspense } from "react";
-import { airbagList, airconditionList, colorList, conditions, firstOwnerList, fuelList, gearboxAutoTypeList, gearboxLevelList, gearboxList, getLabelById, serviceBookList, stateList } from "@/lib/sAutoLists";
+import { Suspense, useRef } from "react";
+import { airbagList, airconditionList, colorList, conditions, equipment, firstOwnerList, fuelList, gearboxAutoTypeList, gearboxLevelList, gearboxList, getLabelById, serviceBookList, stateList } from "@/lib/sAutoLists";
 import {
     Carousel,
     CarouselContent,
@@ -26,7 +26,8 @@ import {
     CarouselNext,
     CarouselPrevious
   } from "@/components/ui/carousel"
-  
+import Autoplay from "embla-carousel-autoplay";  
+
 const actionState: ActionRes<ContactType> = {
     success: false,
     message: "",
@@ -49,7 +50,7 @@ function CarCard({car}: {car: CarWithPhotos}){
                 />}
             </div>
 
-            <div className="grid gap-2 grid-cols-2  w-full sm:items-end mt-8 text-lg">
+            <div className="font-light grid gap-2 grid-cols-2 align-center  w-full sm:items-end mt-8 text-lg">
                 <div className="w-fit flex flex-row space-x-2">
     <Wrench/><span> {new Date(Date.parse(car.stk_date)).toLocaleDateString('cs-CZ', {
   day: '2-digit',
@@ -57,14 +58,15 @@ function CarCard({car}: {car: CarWithPhotos}){
   year: 'numeric',
 })}</span>
                 </div>
-                <div className="w-fit flex flex-row space-x-2">
+                <div className="w-fit  h-full items-center  flex flex-row space-x-2">
     <Gauge/><span> {car.engine_power} kW</span>
                 </div>
-                <div className="w-fit flex flex-row space-x-2">
+                <div className="w-fit flex h-full items-center  flex-row space-x-2">
     <Fuel/><span> {lang === "en" ? getLabelById(fuelList, car.fuel,"fuel_id","en") : getLabelById(fuelList, car.fuel,"fuel_id","cs")}</span>
                 </div>
                 <div className="w-fit flex flex-row space-x-2">
-    <HandCoins/><span> {car.price} Kč</span></div>
+    <HandCoins/><span className="font-medium"> {car.price.toLocaleString("cs-CZ")} Kč</span>
+    </div>
     <Link href={"/auta/"+car.car_id}>
         <Button variant={"secondary"}>
             {lang == "cs" ? "Podrobnosti": "View"}
@@ -77,7 +79,7 @@ function CarCard({car}: {car: CarWithPhotos}){
     )
 }
 
-export function SignleCar({car,  images}: {car: CarWithPhotos, images:SanityCar}){
+export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:SanityCar, eq: number[]}){
     const params = useSearchParams();
        const lang = params.get("lang") || "cs";
        const en = lang === "en"
@@ -93,11 +95,11 @@ export function SignleCar({car,  images}: {car: CarWithPhotos, images:SanityCar}
             
         }
     }, [state.success, state.message]);  
-    const parts = car.note
-  .split(',')
-  .map((part:string) => part.trim())  // odstraní mezery kolem
-  .filter((part:string) => part.length > 0);
+   
       const [api, setApi] = useState<CarouselApi>()
+      const plugin = useRef(
+            Autoplay({ delay: 6000, stopOnInteraction: true })
+              )
     const [
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       current  
@@ -124,53 +126,55 @@ export function SignleCar({car,  images}: {car: CarWithPhotos, images:SanityCar}
          <div className="w-full md:w-1/2 flex flex-col space-y-3 ">
             <h1 className="text-left font-serif text-5xl md:text-6xl my-4">{images.title} </h1>
             <div className="flex flex-col w-full text-lg">
-                <p>{obsah.vin}: <span className="font-light">{car.vin}</span></p>
-                <p>{obsah.run_date}: <span className="font-light">{new Date(Date.parse(car.run_date)).toLocaleDateString('cs-CZ', {
+                <p className="font-medium">{obsah.vin}: <span className="font-light">{car.vin}</span></p>
+                <p className="font-medium">{obsah.run_date}: <span className="font-light">{new Date(Date.parse(car.run_date)).toLocaleDateString('cs-CZ', {
   day: '2-digit',
   month: '2-digit',
   year: 'numeric',
 })}</span></p>
-<p>{obsah.condition}: <span className="font-light">{en? getLabelById(conditions, car.condition,'condition_id',lang) : getLabelById(conditions, car.condition,"condition_id","cs")}</span></p>
-<p>{obsah.tachometr}: <span className="font-light">{car.tachometr} km</span></p>
-<p>{obsah.engine_volume}: <span className="font-light">{car.engine_volume} ccm</span></p>
-<p>{obsah.stk_date}: <span className="font-light">{new Date(Date.parse(car.stk_date)).toLocaleDateString('cs-CZ', {
+<p className="font-medium">{obsah.condition}: <span className="font-light">{en? getLabelById(conditions, car.condition,'condition_id',lang) : getLabelById(conditions, car.condition,"condition_id","cs")}</span></p>
+<p className="font-medium">{obsah.tachometr}: <span className="font-light">{car.tachometr} km</span></p>
+<p className="font-medium">{obsah.engine_volume}: <span className="font-light">{car.engine_volume} ccm</span></p>
+<p className="font-medium">{obsah.stk_date}: <span className="font-light">{new Date(Date.parse(car.stk_date)).toLocaleDateString('cs-CZ', {
   day: '2-digit',
   month: '2-digit',
   year: 'numeric',
 })}</span></p>
-<p>{obsah.engine_power}: <span className="font-light">{car.engine_power} kW/{car.engine_power*1.3} PS</span></p>
-<p>{obsah.fuel}:<span className="font-light">{en? getLabelById(fuelList, car.fuel,"fuel_id",lang) : getLabelById(fuelList, car.fuel,"fuel_id","cs")}</span></p>
-<p>{obsah.door}: <span className="font-light">{car.door}</span></p>
-<p>{obsah.capacity}: <span className="font-light">{car.capacity}</span></p>
-<p>{obsah.color}: <span className="font-light">{en? getLabelById(colorList, car.color,"color_id",lang) : getLabelById(colorList, car.color,"color_id","cs")}</span></p>
-<p>{obsah.airbag}: <span className="font-light">{en? getLabelById(airbagList, car.airbag,"airbag_id",lang) : getLabelById(airbagList, car.airbag,"airbag_id","cs")}</span></p>
-<p>{obsah.aircondition}: <span className="font-light">{en? getLabelById(airconditionList, car.aircondition,"aircondition_id",lang) : getLabelById(airconditionList, car.airbag,"aircondition_id","cs")}</span></p>
-<p>{obsah.euro}: <span className="font-light">{car.euro}</span></p>
-<p>{obsah.state_id}: <span className="font-light">{en? getLabelById(stateList, car.state_id,"id",lang) : getLabelById(stateList, car.state_id,"id","cs")}</span></p>
-<p>{obsah.service_book}: <span className="font-light">{en? getLabelById(serviceBookList, car.service_book,"id",lang) : getLabelById(serviceBookList, car.service_book,"id","cs")}</span></p>
-<p>{obsah.first_owner}: <span className="font-light">{en? getLabelById(firstOwnerList, car.first_owner,"id",lang) : getLabelById(firstOwnerList, car.first_owner,"id","cs")}</span></p>
-<p>{obsah.gearbox}: <span className="font-light">{en? getLabelById(gearboxList, car.gearbox,"id",lang) : getLabelById(gearboxList, car.gearbox,"id","cs")}</span> /<span className="font-light">{en? getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id",lang) : getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id","cs")}</span> </p>
-<p>{obsah.gearbox_level}: <span className="font-light">{en? getLabelById(gearboxLevelList, car.gearbox_level,"id",lang) : getLabelById(gearboxLevelList, car.gearbox_level,"id","cs")}</span></p>
-<p>{obsah.cena}: <span className="font-bold text-lg">{car.price} Kč</span></p>
+<p className="font-medium">{obsah.engine_power}: <span className="font-light">{car.engine_power} kW/{car.engine_power*1.3} PS</span></p>
+<p className="font-medium">{obsah.fuel}:<span className="font-light">{en? getLabelById(fuelList, car.fuel,"fuel_id",lang) : getLabelById(fuelList, car.fuel,"fuel_id","cs")}</span></p>
+<p className="font-medium">{obsah.door}: <span className="font-light">{car.door}</span></p>
+<p className="font-medium">{obsah.capacity}: <span className="font-light">{car.capacity}</span></p>
+<p className="font-medium">{obsah.color}: <span className="font-light">{en? getLabelById(colorList, car.color,"color_id",lang) : getLabelById(colorList, car.color,"color_id","cs")}</span></p>
+<p className="font-medium">{obsah.airbag}: <span className="font-light">{en? getLabelById(airbagList, car.airbag,"airbag_id",lang) : getLabelById(airbagList, car.airbag,"airbag_id","cs")}</span></p>
+<p className="font-medium">{obsah.aircondition}: <span className="font-light">{en? getLabelById(airconditionList, car.aircondition,"aircondition_id",lang) : getLabelById(airconditionList, car.airbag,"aircondition_id","cs")}</span></p>
+<p className="font-medium">{obsah.euro}: <span className="font-light">{car.euro}</span></p>
+<p className="font-medium">{obsah.state_id}: <span className="font-light">{en? getLabelById(stateList, car.state_id,"id",lang) : getLabelById(stateList, car.state_id,"id","cs")}</span></p>
+<p className="font-medium">{obsah.service_book}: <span className="font-light">{en? getLabelById(serviceBookList, car.service_book,"id",lang) : getLabelById(serviceBookList, car.service_book,"id","cs")}</span></p>
+<p className="font-medium">{obsah.first_owner}: <span className="font-light">{en? getLabelById(firstOwnerList, car.first_owner,"id",lang) : getLabelById(firstOwnerList, car.first_owner,"id","cs")}</span></p>
+<p className="font-medium">{obsah.gearbox}: <span className="font-light">{en? getLabelById(gearboxList, car.gearbox,"id",lang) : getLabelById(gearboxList, car.gearbox,"id","cs")}</span> 
+<span className="font-light">{en? getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id",lang) : getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id","cs")}</span> </p>
+<p className="font-medium">{obsah.gearbox_level}: <span className="font-light">{en? getLabelById(gearboxLevelList, car.gearbox_level,"id",lang) : getLabelById(gearboxLevelList, car.gearbox_level,"id","cs")}</span></p>
+ <span className="font-bold text-4xl">{car.price.toLocaleString("cs-CZ")} Kč</span>
                </div>
          </div>
 
-         <div className="w-full md:w-1/2 flex flex-col space-y-3 font-serif ">
+         <div className="w-full md:w-1/2 flex pt-5 flex-col justify-center space-y-3 font-serif ">
          
          <Carousel 
                   setApi={setApi} 
-                  className="w-full"
+                  plugins={[plugin.current]}
+                  className="w-9/10 mx-auto"
                  >
-                    <CarouselContent>
+                    <CarouselContent >
                   {images.photos.map((c: string, index) => (
-                    <CarouselItem key={index}>
+                    <CarouselItem className="flex flex-col justify-center" key={index}>
                       {images.photos.length > 0 &&
                         <Image 
                     src={c} 
                     alt={"Lumit Car company "} 
                      width={1024}
                     height={1024}
-                    className="z-0 rounded-xl"
+                    className="z-0 rounded-xl "
                       />
                       }     
                   
@@ -179,8 +183,8 @@ export function SignleCar({car,  images}: {car: CarWithPhotos, images:SanityCar}
                     </CarouselItem>
                 ))}
                   </CarouselContent>
-                  <CarouselPrevious/>
-                  <CarouselNext/>
+                  <CarouselPrevious className="bg-black"/>
+                  <CarouselNext className="bg-black"/>
                   
                   </Carousel>
          </div>
@@ -189,17 +193,18 @@ export function SignleCar({car,  images}: {car: CarWithPhotos, images:SanityCar}
             <div className="w-full md:w-1/2 flex flex-col space-y-3 font-serif ">
             <h1 className="text-5xl">Výbava</h1>
             <div className="flex flex-row gap-4 flex-wrap">
-        {!en && parts.map((e:string, i: number) => (
-            <div key={i} className="relative bg-gray-300 min-w-30 min-h-22 rounded-xl">
-                    <div key={i} className="absolute top-0 left-0 p-1 min-h-22 flex flex-col justify-evenly px-5 rounded-xl min-w-30 backdrop-blur-2xl z-20">
-                    <p className="text-lg w-full font-serif">{e.length > 30 ? e.slice(0,30) + "..." : e}</p>
-                    
+        {eq.map((e:number, i: number) => {
+          console.log(e)
+          return(
+            <div key={i} className="relative bg-gray-300 min-w-24  sm:min-w-28 min-h-20 rounded-xl">
+                    <div key={i} className="absolute top-0 left-0 p-1 min-h-22 border flex flex-col justify-evenly px-5 rounded-xl min-w-24 sm:min-w-28 backdrop-blur-2xl z-20">
+                    <span className="text-base">{en? getLabelById(equipment, e,"id",lang) : getLabelById(equipment, e,"id","cs")}</span>
                       </div>
-                    
                       <div className="absolute right-0 bottom-0 w-10 h-10 bg-red-400 z-0 rounded-full">
                       </div>
                 </div>
-        ))}
+                )
+        })}
      
             </div>
             </div>

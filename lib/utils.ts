@@ -78,10 +78,23 @@ export function listOfCars(sessionId: string, imported: 'all' | 'imported' = 'al
   });
 }
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function getSautoCar(sessionId: string, carId: number): Promise<any> {
+export async function getSautoCar(sessionId: string, carId: number): Promise<any> {
+  
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     client.methodCall('getCar', [sessionId, carId], (err: any , result: any 
+      ) => {
+      if (err) return reject(err);
+      resolve(result);
+    });
+  });
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function listOfEquipment(sessionId: string, carId: number): Promise<any> {
+  return new Promise((resolve, reject) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    client.methodCall('listOfEquipment', [sessionId, carId], (err: any , result: any 
       ) => {
       if (err) return reject(err);
       resolve(result);
@@ -134,6 +147,7 @@ export async function getSautoCardCar(offset:number =0,limit: number = 20): Prom
    
      cars.push(carWithPhotos);
     }
+    
     
   }
   return{

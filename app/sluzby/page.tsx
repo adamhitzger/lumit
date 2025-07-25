@@ -6,13 +6,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { useState } from "react";
+
 export default function Sluzby(){
     const params = useSearchParams();
         const lang = params.get("lang") || "cs";
-        
+        const [step, setStep] = useState<number | null>(null)
         const obsah = content[lang as keyof typeof content] || content.cs
         const leasingovky:string[]=[
-            "arval.png","ayvens.png","cebianet.png","skofin.png"
+            "arval.png","ayvens.png","cebianet.png","skofin.png","ald.png"
+        ] 
+        const leasingovky2:string[]=[
+            "cp.png","generali.png","colonade.png",
+        ] 
+        const leasingovky3:string[]=[
+            "moneta.png","essox.png"
         ] 
     return(
         <>
@@ -56,7 +70,7 @@ export default function Sluzby(){
                   </div>
                 </div>
 {i===1 ?
-<div className="grid grid-cols-2 gap-3  items-center">
+<div className="grid grid-cols-2 gap-3 w-full md:w-1/2 items-center">
     {leasingovky.map((s: string, i: number) => (
         <Image
                     alt={"Leasingové společnosti"}
@@ -82,6 +96,50 @@ export default function Sluzby(){
 
             </section>
         ))}
+        <section id="leasing" className={`w-full p-5 gap-5 flex flex-col md:flex-row-reverse`}>
+            <div className="w-full md:w-1/2 flex flex-col space-y-4 md:my-auto">
+             <h1 className="font-serif text-5xl md:text-7xl">{obsah.sluzby.pojisteni} <span className="text-red-600 ">leasing</span></h1>
+             <Accordion type="single" collapsible>
+                {obsah.sluzby.accordion.map((a,i)=> (
+ <AccordionItem key={i} value={`item-${i}`}>
+    <AccordionTrigger className="text-xl border-b-black border" onClick={() => setStep(i)}>{a.heading}</AccordionTrigger>
+    <AccordionContent>
+      {a.text}
+    </AccordionContent>
+  </AccordionItem>
+                ))}
+ 
+</Accordion>
+            </div>
+            <div className="flex flex-row gap-3 w-full md:w-1/2 items-center">
+                {step === 3 ? 
+                leasingovky3.map((s: string, i: number) => (
+        <Image
+                    alt={"Leasingové společnosti"}
+                    key={i}
+                    src={"/leaselogos/"+s}
+                    width={1804}
+                    height={1804}
+                    className="rounded-xl w-full md:w-1/2  shadow-red-500"
+                />
+
+    ))
+                :
+                 leasingovky2.map((s: string, i: number) => (
+        <Image
+                    alt={"Leasingové společnosti"}
+                    key={i}
+                    src={"/leaselogos/"+s}
+                    width={804}
+                    height={804}
+                    className="rounded-xl w-full md:w-1/2  shadow-red-500"
+                />
+
+    ))
+                }
+   
+</div>
+        </section>
         </>
     )
 }

@@ -372,3 +372,23 @@ export const equipment = [
   { id: 330, cs: "Elektrické dovírání dveří", en: "Electric soft-close doors" }
 ];
 
+export const cars = [
+  {id: 93, name: "Škoda"},
+  {id: 103, name: "Volkswagen"},
+  {id: 24, name: "Ford"},
+  {id: 78, name: "Renault"},
+  {id: 161, name: "Peugeot"},
+  {id: 41, name: "Kia"},
+  {id: 69, name: "Opel"},
+  {id: 107, name: "Volvo"},
+  {id: 1464, name: "Fiat"},
+  {id: 2, name: "Audi"},
+  {id: 31, name: "Hyundai"},
+  {id: 34, name: "Chevrolet"},
+  {id: 7, name: "BMW"},
+  {id: 53, name: "Mercedes"},
+  {id: 101, name: "Toyota"},
+  {id: 50, name: "Mazda"},
+  {id: 437, name: "Citroen"},
+  {id: 356, name: "Suzuki"},
+]

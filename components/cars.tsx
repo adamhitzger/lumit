@@ -3,7 +3,7 @@
 import { ActionRes, CarWithPhotos, SanityCar} from "@/types";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { ArrowRight, Fuel, Gauge, HandCoins } from "lucide-react";
+import { ArrowRight, Divide, Fuel, Gauge, HandCoins } from "lucide-react";
 import { content } from "@/lib/content";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
@@ -16,7 +16,7 @@ import { Label } from "./ui/label";
 import { ContactType } from "@/lib/schemas";
 import toast from "react-hot-toast";
 import { Textarea } from "./ui/textarea";
-import { Suspense, useRef } from "react";
+import { Suspense, useRef, useMemo } from "react";
 import { airbagList, airconditionList, colorList, conditions, equipment, firstOwnerList, fuelList, gearboxAutoTypeList, gearboxLevelList, gearboxList, getLabelById, serviceBookList, stateList } from "@/lib/sAutoLists";
 import {
     Carousel,
@@ -27,6 +27,7 @@ import {
     CarouselPrevious
   } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay";  
+import Filters from "./filters";
 
 const actionState: ActionRes<ContactType> = {
     success: false,
@@ -309,6 +310,33 @@ export function Cars({cars}: {cars: CarWithPhotos[]}){
        const lang = params.get("lang") || "cs";
        const obsah = content[lang as keyof typeof content] || content.cs  
        const carsContent = obsah.cars
+  const filterId = Number(params.get("filter") ?? 0); // 0 = vše
+  const maxPrice = params.get("price") ? Number(params.get("price")) : Infinity;
+
+  const priceSort = params.get("priceADsc"); // 'priceasc' | 'pricedesc' | null
+  const visibleCars = useMemo(() => {
+    let data = cars;
+
+    // 1) filtry
+    if (filterId) {
+      // uprav si podmínku podle své struktury (brandId, typeId, categoryId...)
+      data = data.filter((c) => c.manufacturer_id === filterId);
+    }
+
+    if (isFinite(maxPrice)) {
+      data = data.filter((c) => c.price <= maxPrice);
+    }
+
+    // 2) řazení
+    const copy = [...data];
+    if (priceSort === "priceAsc") {
+      copy.sort((a, b) => (a.price || 0) - (b.price || 0));
+    } else if (priceSort === "priceDesc") {
+      copy.sort((a, b) => (b.price || 0) - (a.price || 0));
+    }
+    return copy;
+  }, [cars, filterId, maxPrice, priceSort]);
+
 return(
   <Suspense
       fallback={
@@ -329,14 +357,14 @@ return(
 <section className=" text-black left-0 w-full h-full backdrop-blur-xl z-10 flex flex-col sm:flex-row p-5 gap-5">
               <div className="w-full h-fit sm:h-full flex flex-col justify-center space-y-4">
                   <h1 className="font-serif text-left text-5xl md:text-7xl">{carsContent.heading2}<span className="text-red-600 "> {carsContent.endHeader2}</span></h1>
-                   <header className="w-full flex text-black flex-wrap text-lg">
-            
-        </header>
-                    <div className="w-full  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols_4 2xl:grid-cols-5 gap-4">
-                        {cars.map((c: CarWithPhotos, i:number) => (
+                   <Filters/>
+                   <div className="w-full  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols_4 2xl:grid-cols-5 gap-4">
+                        {visibleCars.length > 0 ? visibleCars.map((c: CarWithPhotos, i:number) => (
+                             
                             <CarCard car={c} key={i}/>
-                        ))}
-                    </div> 
+                       
+                        )) : <div className="min-h-[200px] w-full flex flex-row text-center"><span className="font-semibold text-2xl  text-red-600">Nebyla nalezena žádná auta</span></div>}
+                      </div>
               </div>         
      </section>
      </Suspense>

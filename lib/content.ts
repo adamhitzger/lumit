@@ -111,6 +111,11 @@ export const content = {
             endBrand: "značky",
             price: "Podle",
             endPrice: "ceny",
+            priceDesc: "Cena sestupně",
+            priceAsc: "Cena vzestupně",
+            nameAsc: "A-Z",
+            nameDesc: "Z-A",
+            clear: "Vymazat"
         },
         about: {
             text: "​Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze nehavarovaná vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
@@ -362,6 +367,11 @@ export const content = {
             endBrand: "značky",
             price: "Podle",
             endPrice: "ceny",
+            priceDesc: "Descending price",
+            priceAsc: "Ascending price",
+            nameAsc: "A-Z",
+            nameDesc: "Z-A",
+            clear: "Clear"
         },
         car:{
             heading: "More",

@@ -13,6 +13,7 @@ import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { Loader2, ArrowRight } from "lucide-react";
 import { sendContact } from "@/lib/actions";
+import Link from 'next/link';
 
 const actionState: ActionRes<ContactType> = {
     success: false,
@@ -85,9 +86,10 @@ export default function Contact(){
                                </p>
                             )}
                 </div>
-                <div className='flex flex-row flex-wrap space-y-2 justify-between lg:col-span-2 w-full  py-5 items-center'>
+                <div className='flex flex-col flex-wrap space-y-2 lg:col-span-2 w-full  '>
                         
-                        <Button variant={"secondary"} type="submit">{isPending ? <Loader2 className='animate-spin' /> : <>{obsah.contact.submit} < ArrowRight /></>}</Button>
+                        <Button className='w-28' variant={"secondary"} type="submit">{isPending ? <Loader2 className='animate-spin' /> : <>{obsah.contact.submit} < ArrowRight /></>}</Button>
+                        <p>{obsah.contact.souhlas} <Link href={"/souhlas"} className='underline underline-offset-2'>{obsah.contact.souhlas2}</Link></p>
                     </div>
                 
             </form>

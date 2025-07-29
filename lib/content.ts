@@ -47,6 +47,10 @@ export const content = {
                         name: "Kontakt",
                         link: "/#kontakt",
                     },
+                    {
+                        name: "Souhlas se zpracováním osobních údajů",
+                        link:"/souhlas"
+                    },
                 ],
             },
             {
@@ -198,7 +202,9 @@ export const content = {
             companyholder: "Zadjete firmu(nepoviné)",
             msgLabel: "Zpráva",
             msgholder: "Zadejte zprávu" ,
-            submit: "Odeslat"
+            submit: "Odeslat",
+            souhlas: "Odesláním souhlasíte se",
+            souhlas2: "zpracováním osobních údajů"
         },
         sluzby: {
             sekce: [
@@ -233,6 +239,7 @@ export const content = {
                 }
             ],
             pojisteni: "Pojištění a",
+            financovani: "financování vozu",
             accordion: [
                 {
                     heading: "🛡️  Povinné ručení",
@@ -300,6 +307,10 @@ export const content = {
                         {
                             name: "Contact",
                             link: "/#konatkt?lang=en",
+                        },
+                        {
+                            name: "Consent to the Processing of Personal Data",
+                            link: "/souhlas",
                         },
                     ],
                 },
@@ -454,7 +465,9 @@ contact: {
     companyholder: "Enter your company (optional)",
     msgLabel: "Message",
     msgholder: "Enter your message",
-    submit: "Send"
+    submit: "Send",
+    souhlas: "By submitting, you agree to",
+    souhlas2: "the processing of personal data"
 },
 sluzby: {
     sekce: [
@@ -489,6 +502,7 @@ sluzby: {
         }
     ],
     pojisteni: "Insurance and",
+    financovani: "car financing",
 accordion: [
     {
         heading: "🛡️ Mandatory Liability Insurance",

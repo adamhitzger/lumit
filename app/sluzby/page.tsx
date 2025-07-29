@@ -23,7 +23,7 @@ export default function Sluzby(){
             "arval.png","ayvens.png","cebianet.png","skofin.png","ald.png"
         ] 
         const leasingovky2:string[]=[
-            "cp.png","generali.png","colonade.png",
+            "cpp.png","generali.png","colonade.png","kooperativa.png",
         ] 
         const leasingovky3:string[]=[
             "moneta.png","essox.png"
@@ -90,15 +90,12 @@ export default function Sluzby(){
                     height={1204}
                     className="rounded-xl w-full md:w-1/2 shadow-xl shadow-red-500"
                 />
-
 }
-                
-
             </section>
         ))}
         <section id="leasing" className={`w-full p-5 gap-5 flex flex-col md:flex-row-reverse`}>
             <div className="w-full md:w-1/2 flex flex-col space-y-4 md:my-auto">
-             <h1 className="font-serif text-5xl md:text-7xl">{obsah.sluzby.pojisteni} <span className="text-red-600 ">leasing</span></h1>
+             <h1 className="font-serif text-5xl md:text-7xl">{obsah.sluzby.pojisteni} <span className="text-red-600 ">{obsah.sluzby.financovani}</span></h1>
              <Accordion type="single" collapsible>
                 {obsah.sluzby.accordion.map((a,i)=> (
  <AccordionItem key={i} value={`item-${i}`}>

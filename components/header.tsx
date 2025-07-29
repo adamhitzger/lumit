@@ -78,7 +78,7 @@ export default function Header({cars}: {cars: CarWithPhotos[]}){
                     <CarouselContent>
                   {cars.map((c: CarWithPhotos, index) => (
                     <CarouselItem key={index}>
-              <div className="relative max-w-xl  h-[200px] mx-auto lg:h-[420px]">
+              <div className="relative max-w-xl h-[300px] mx-auto lg:h-[420px]">
                 <Image
                   src={c.photos[0]}
                   alt={`Lumit, s.r.o - ${c.title}`}

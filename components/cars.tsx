@@ -3,7 +3,7 @@
 import { ActionRes, CarWithPhotos, SanityCar} from "@/types";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { ArrowRight, Divide, Fuel, Gauge, HandCoins } from "lucide-react";
+import { ArrowRight, Fuel, Gauge, HandCoins } from "lucide-react";
 import { content } from "@/lib/content";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";

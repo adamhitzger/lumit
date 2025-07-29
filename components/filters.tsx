@@ -14,7 +14,6 @@ export default function Filters(){
     const [active, setActive] = useState<number>(0);
      const [price, setPrice] = useState<[number]>([1000000]);
       const [priceAd, setPriceAd] = useState<string>("");
-       const [az, setAZ] = useState<string>("");
     const router = useRouter()
      const obsah = content[lang as keyof typeof content].filters || content.cs.filters
     const handleTypeClick = (item: number) => {

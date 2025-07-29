@@ -306,10 +306,10 @@ return(
 }
 
 export function Cars({cars}: {cars: CarWithPhotos[]}){
-   const params = useSearchParams();
-       const lang = params.get("lang") || "cs";
-       const obsah = content[lang as keyof typeof content] || content.cs  
-       const carsContent = obsah.cars
+  const params = useSearchParams();
+  const lang = params.get("lang") || "cs";
+  const obsah = content[lang as keyof typeof content] || content.cs  
+  const carsContent = obsah.cars
   const filterId = Number(params.get("filter") ?? 0); // 0 = vše
   const maxPrice = params.get("price") ? Number(params.get("price")) : Infinity;
 

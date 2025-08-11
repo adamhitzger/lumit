@@ -62,6 +62,7 @@ export const content = {
                     },
                     {
                         name: "Dovozy",
+                        link:"/sluzby#dovozy"
                     },
                     {
                         name: "Autozastavárna",
@@ -90,7 +91,7 @@ export const content = {
             header: "Vítejte na stránkách ",
             endHeader: "Lumit",
             firstInfo: "přes 6000 prodaných aut",
-            secInfo: "nabízíme prověřená vozidla",
+            secInfo: "Nabízíme prověřená vozidla",
             thirdInfo: "Zajišťujeme přepravu automobilů z celé EU",
             btnText1: "O nás",
             btnLink1: "/#onas",
@@ -142,12 +143,12 @@ export const content = {
                 },
                  {
                     heading: "Dovozy",
-                    text: "​Nabízíme individuální dovoz vozidel ze zahraničí podle vašich požadavků. vyřídíme vše pořrebné od přepravy po registraci",
+                    text: "​Nabízíme individuální dovoz vozidel ze zahraničí podle vašich požadavků. vyřídíme vše potřebné od přepravy po registraci",
                     link: "/sluzby#dovozy"
                 },
                  {
                     heading: "Autozastavárna",
-                    text: "​Nabízíme individuální dovoz vozidel ze zahraničí podle vašich požadavků. vyřídíme vše pořrebné od přepravy po registraci",
+                    text: "U nás najdete prověřená vozidla za výhodné ceny i možnost rychle získat peníze i za svůj vůz. Nabízíme bezpečný prodej, výkup i zástavu automabilů všech značek. Žádné složité papírování - vše vyřídíme na počkání.",
                     link: "/sluzby#zastavarna"
                 },
                  {
@@ -306,7 +307,7 @@ export const content = {
                         },
                         {
                             name: "Contact",
-                            link: "/#konatkt?lang=en",
+                            link: "/#kontakt?lang=en",
                         },
                         {
                             name: "Consent to the Processing of Personal Data",
@@ -319,19 +320,19 @@ export const content = {
                     links: [
                         {
                             name: "Car Sales",
-                            link:"/sluzby#prodej?lang=en"
+                            link:"/sluzby?lang=en#prodej"
                         },
                         {
                             name: "Car Imports",
-                            link:"/sluzby#dovozy?lang=en"
+                            link:"/sluzby?lang=en#dovozy"
                         },
                         {
                             name: "Car Pawn",
-                            link:"/sluzby#zastavarna?lang=en"
+                            link:"/sluzby?lang=en#zastavarna"
                         },
                         {
                             name: "Leasing",
-                            link:"/sluzby#leasing?lang=en"
+                            link:"/sluzby?lang=en#leasing"
                         }
                     ],
                 },
@@ -373,11 +374,11 @@ export const content = {
         },
         filters: {
             all: "All",
-            brand: "Podle",
+            brand: "By",
             filtry: "Filters:",
-            endBrand: "značky",
-            price: "Podle",
-            endPrice: "ceny",
+            endBrand: "brand",
+            price: "By",
+            endPrice: "price",
             priceDesc: "Descending price",
             priceAsc: "Ascending price",
             nameAsc: "A-Z",
@@ -436,7 +437,7 @@ export const content = {
         },
         {
             heading: "Car Pawn Service",
-            text: "We offer personalized import of vehicles from abroad according to your requirements. We handle everything from transport to registration.",
+            text: "With us you will find proven vehicles at affordable prices and the opportunity to quickly get money for your car. We offer safe sale, purchase and pledge of cars of all brands. No complicated paperwork - we will handle everything while you wait.",
             link: "/sluzby#zastavarna?lang=en"
         },
          {

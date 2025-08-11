@@ -19,39 +19,48 @@ const inSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "Lumit Autobazar",
-  description: "Autobazar Lumit s.r.o.",
+  title: "Autobazar Lumit s.r.o. Havlíčkův Brod | Prodej a výkup vozů",
+  description:
+    "Autobazar Lumit s.r.o. v Havlíčkově Brodě – specializujeme se na prodej, výkup a protiúčet osobních i užitkových automobilů. Nabízíme prověřené vozy, férové ceny a profesionální přístup.",
   icons: {
-    icon: "/logo.png"
+    icon: "/logo.png",
   },
-  applicationName: "Lumit",
+  applicationName: "Lumit Autobazar",
   generator: "Next.ts",
-  authors: [{name: "Adam Hitzger"}, {name: "Michal Teplý"}],
+  authors: [
+    { name: "Adam Hitzger" },
+    { name: "Michal Teplý" }
+  ],
   keywords: [
-    "správa portfolia ",
-    "investice",
-    "portfolio management",
-    "investiční poradce",
-    "finanční plánování",
-    "osobní investice",
-    " Havlíčkův Brod",
-],
-creator: "Adam Hitzger",
-        publisher: "Adam Hitzger",
-        formatDetection: {
-            email: false,
-            address: false,
-            telephone: false,
-          },
-openGraph: {
-  title: "Autobazar Lumit s.r.o. Havlíčkův Brod",
-  description: "V oboru financí pracuji od roku 1998 tedy více jak 27 let. Specializuji se na investice a rizika v osobních financích. Na mém webu najdete články, ebook, newsletter a můžete si předplatit obsah.",
-  url: "https://www.financehb.cz",
-  siteName: "Autobazar Lumit s.r.o. Havlíčkův Brod",
-  locale: "cs_CZ",
-  type: "website"
-}
+    "autobazar Havlíčkův Brod",
+    "prodej ojetých vozů",
+    "výkup automobilů",
+    "protiúčet auta",
+    "ojeté vozy Havlíčkův Brod",
+    "Lumit s.r.o.",
+    "osobní auta",
+    "užitkové vozy",
+    "prodej aut",
+    "koupě auta"
+  ],
+  creator: "Adam Hitzger",
+  publisher: "Adam Hitzger",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "Autobazar Lumit s.r.o. Havlíčkův Brod | Prověřené ojeté vozy",
+    description:
+      "Navštivte Autobazar Lumit s.r.o. v Havlíčkově Brodě. Nabízíme široký výběr prověřených ojetých vozů, možnost výkupu a protiúčtu. Férové ceny a osobní přístup.",
+    url: "https://auto-mt.com",
+    siteName: "Autobazar Lumit s.r.o. Havlíčkův Brod",
+    locale: "cs_CZ",
+    type: "website",
+  },
 };
+
 
 export default function RootLayout({
   children,

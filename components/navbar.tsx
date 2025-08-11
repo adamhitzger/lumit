@@ -43,7 +43,7 @@ export default function Navbar(){
                         {l.name}
                     </Link>
                 ))}
-               <Link href={lang === "cs" ? "/?lang=en" : "/?lang=cs"} className="rounded-full bg-white h-fit w-fit px-2 py-1 text-2xl ">
+               <Link href={lang === "cs" ? pathname+"/?lang=en" : pathname+"/?lang=cs"} className="rounded-full bg-white h-fit w-fit px-2 py-1 text-2xl ">
             {en ?"🇨🇿": "🇬🇧" }
         </Link> 
       </SheetContent>

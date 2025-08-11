@@ -70,7 +70,7 @@ export default function Sluzby(){
                   </div>
                 </div>
 {i===1 ?
-<div className="grid grid-cols-2 gap-3 w-full md:w-1/2 items-center">
+<div className="grid grid-cols-3 lg:grid-cols-2 gap-3 w-full md:w-1/2 items-center">
     {leasingovky.map((s: string, i: number) => (
         <Image
                     alt={"Leasingové společnosti"}
@@ -108,7 +108,7 @@ export default function Sluzby(){
  
 </Accordion>
             </div>
-            <div className="flex flex-row gap-3 w-full md:w-1/2 items-center">
+            <div className="grid grid-cols-2 lg:grid-cols-4  gap-3 w-full md:w-1/2 items-center">
                 {step === 3 ? 
                 leasingovky3.map((s: string, i: number) => (
         <Image

@@ -12,9 +12,9 @@ export default function Footer(){
     const obsah = content[lang as keyof typeof content] || content.cs
     
     return(
-        <footer className="w-full grid grid-cols-2 sm:grid-cols-5
+        <footer id="footer" className="w-full grid grid-cols-2 sm:grid-cols-5
          bg-black p-3 text-white gap-4">
-            <Link href={en ? "/?lang=en" : "/lang?=cs"} className="col-span-2 sm:col-span-1">
+            <Link href={en ? "/?lang=en" : "/?lang?=cs"} className="col-span-2 sm:col-span-1">
             <Image src={"/logo.png"} alt="Logo Autobazaru Lumit" width={250} height={80}/>
             </Link>
             {obsah.footer.links.map((l,i:number) => (

@@ -72,6 +72,10 @@ export const content = {
                         name: "Pojištění a leasing",
                         link:"/sluzby#leasing"
                     },
+                    {
+                        name: "Čistění automobilů",
+                        link:"/sluzby#cleaning"
+                    },
                 ],
             },
         ],
@@ -93,6 +97,7 @@ export const content = {
             firstInfo: "přes 6000 prodaných aut",
             secInfo: "Nabízíme prověřená vozidla",
             thirdInfo: "Zajišťujeme přepravu automobilů z celé EU",
+            fourthInfo: "Ozvěte se nám na číslech ",
             btnText1: "O nás",
             btnLink1: "/#onas",
             btnText2: "Kontakt",
@@ -104,8 +109,8 @@ export const content = {
             heading2: "Aktuální nabídka",
             endHeader: "vozy",
             endHeader2: "vozů",
-            text: "Nabízíme osobních a užitkových motorových vozidel",
-            text2: "Nabízíme osobních a užitkových motorových vozidel",
+            text: "Nabízíme osobní a užitková motorová vozidla",
+            text2: "Nabízíme osobní a užitková motorová vozidla",
              btnLink:"/auta",
             btnText: "Více",
         },
@@ -155,6 +160,11 @@ export const content = {
                     heading: "Pojištění a leasing",
                     text: "Nabízíme moderní pojištění vozů včetně povinného ručení havarijního i komplexního balíčku a také výhodný leasing nebo úvěr na auta a motorky do 11 let",
                     link: "/sluzby#leasing"
+                },
+                {
+                    heading: "Čistění automobilů",
+                    text: "Čištění exteriéru i interiéru profesionální autokosmetikou a technikou Förch a Karcher.",
+                    link: "/sluzby#cleaning"
                 },
             ],
             
@@ -237,7 +247,24 @@ export const content = {
                     endHeading: "zastavárna",
                     text: "Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze nehavarovaná vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
                     img: "/zastavarna.jpeg",
-                }
+                },
+                {   
+                    id: "cleaning",
+                    heading: "Čištění",
+                    endHeading: " automobilů",
+                    text: "Čištění exteriéru i interiéru profesionální  autokosmetikou a technikou Förch a Karcher.",
+                    list: [
+  "suché i mokré čištění interiéru",
+  "tepování interiéru",
+  "čištění, ošetření kožených částí a sedadel",
+  "oživení vnitřních, venkovních plastů",
+  "mytí kol a poklic",
+  "ošetření pneu",
+  "ruční mytí vozidel",
+  "ošetření, oživení starých laků"
+],
+                    img: "/cleaning.png",
+                },
             ],
             pojisteni: "Pojištění a",
             financovani: "financování vozu",
@@ -258,7 +285,8 @@ export const content = {
                     heading: "💼 Leasing a úvěr",
                     text: "Nabízíme sjednat leasing, úvěr na všechny tipy automobilů a motocyklů, až do stáří 11 let, od předních leasingových společností na našem trhu."
                 }
-            ]
+            ],
+            
         }
     },
     en:{
@@ -333,7 +361,12 @@ export const content = {
                         {
                             name: "Leasing",
                             link:"/sluzby?lang=en#leasing"
-                        }
+                        },
+                        {
+                            name: "Car cleaning",
+                            link:"/sluzby?lang=en#cleaning"
+                        },
+
                     ],
                 },
             ],
@@ -355,6 +388,7 @@ export const content = {
             firstInfo: "over 6000 cars sold",
             secInfo: "non-crashed with warranty",
             thirdInfo: "car transport from EU",
+            fourthInfo: "Call us on ",
             btnText1: "About us",
             btnLink1: "/#onas?lang=en",
             btnText2: "Contact",
@@ -445,6 +479,11 @@ export const content = {
 text: "We offer modern vehicle insurance including liability, comprehensive and full coverage packages, as well as advantageous leasing or loans for cars and motorcycles up to 11 years old",
 link: "/sluzby#leasing"
                 },
+                  {
+                    heading: "Car cleaning",
+text: "Professional cleaning of both exterior and interior using Förch and Karcher car care products and techniques.",
+link: "/sluzby#cleaning"
+                },
     ],
     
 },
@@ -500,7 +539,25 @@ sluzby: {
             endHeading: "Pawnshop",
             text: "We have been active on the market since 1993, specializing in the import and sale of passenger and commercial vehicles. We only offer non-accident vehicles with guaranteed origin, condition, and mileage. Most of our vehicles come from reputable leasing companies such as Arval, LeasePlan, and others, from operational leases or directly from authorized dealerships. Thanks to this, we provide our customers with assurance of quality and transparency when choosing their new vehicle.",
             img: "/zastavarna.jpeg",
-        }
+        },
+        {   
+    id: "cleaning",
+    heading: "Cleaning",
+    endHeading: " of Cars",
+    text: "Professional cleaning of both exterior and interior using Förch and Karcher car care products and techniques.",
+    list: [
+        "dry and wet interior cleaning",
+        "interior shampooing",
+        "cleaning and care of leather parts and seats",
+        "revitalizing interior and exterior plastics",
+        "washing wheels and hubcaps",
+        "tire treatment",
+        "hand washing of vehicles",
+        "care and revitalization of old paint"
+    ],
+    img: "/cleaning.png",
+},
+
     ],
     pojisteni: "Insurance and",
     financovani: "car financing",

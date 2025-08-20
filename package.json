@@ -22,6 +22,7 @@
     "crypto": "^1.0.1",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.508.0",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^3.12.0",

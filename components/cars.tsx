@@ -43,17 +43,18 @@ function CarCard({car}: {car: CarWithPhotos}){
         <aside className="w-full grid grid-cols-1  rounded-lg text-black bg-white p-4">
             <div className="font-serif text-3xl w-full flex items-start flex-col gap-2">
                 <h2>{car.title ? car.title : car.car_id}</h2>
-                {car.photos &&<Image src={car.photos[0]}
+                <Link href={"/auta/"+car.car_id}>{car.photos &&<Image src={car.photos[0]}
                 alt={car.address}
                 width={854}
                 height={854}
                 className="rounded-lg"
                 />}
+                </Link>
             </div>
 
             <div className="font-light grid gap-2 grid-cols-2 align-center  w-full sm:items-end mt-8 text-lg">
-                <div className="w-fit flex flex-row space-x-2">
-    <Wrench/><span> {new Date(Date.parse(car.stk_date)).toLocaleDateString('cs-CZ', {
+                <div className="w-fit flex flex-row items-center space-x-2">
+    <Wrench/><span> {new Date(Date.parse(car.run_date)).toLocaleDateString('cs-CZ', {
   day: '2-digit',
   month: '2-digit',
   year: 'numeric',
@@ -65,7 +66,7 @@ function CarCard({car}: {car: CarWithPhotos}){
                 <div className="w-fit flex h-full items-center  flex-row space-x-2">
     <Fuel/><span> {lang === "en" ? getLabelById(fuelList, car.fuel,"fuel_id","en") : getLabelById(fuelList, car.fuel,"fuel_id","cs")}</span>
                 </div>
-                <div className="w-fit flex flex-row space-x-2">
+                <div className="w-fit items-center flex flex-row space-x-2">
     <HandCoins/><span className="font-medium"> {car.price.toLocaleString("cs-CZ")} Kč</span>
     </div>
     <Link href={"/auta/"+car.car_id}>

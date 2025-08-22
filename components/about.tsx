@@ -10,7 +10,7 @@ import {
     CarouselPrevious,
     type CarouselApi,
   } from "@/components/ui/carousel"
-import { ArrowRight, BadgeCheck, Car, Globe, Phone} from "lucide-react"
+import { ArrowRight, BadgeCheck, Car, Globe} from "lucide-react"
 import { content } from "@/lib/content"
 import { useSearchParams } from "next/navigation"
 import { Button } from "./ui/button"

@@ -10,12 +10,12 @@ export const content = {
                 link: "/sluzby",
             },
             {
-                name: "Nabídka aut",
+                name: "Nabídka vozidel",
                 link: "/auta",
             },
             {
-                name: "Recenze",
-                link: "/#recenze",
+                name: "O nás",
+                link: "/#onas",
             },
             {
                 name: "Kontakt",
@@ -36,12 +36,12 @@ export const content = {
                         link: "/sluzby",
                     },
                     {
-                        name: "Nabídka aut",
+                        name: "Nabídka vozidel",
                         link: "/auta",
                     },
                     {
-                        name: "Recenze",
-                        link: "/#recenze",
+                        name: "O nás",
+                        link: "/#onas",
                     },
                     {
                         name: "Kontakt",
@@ -102,17 +102,17 @@ export const content = {
             btnLink1: "/#onas",
             btnText2: "Kontakt",
             btnLink2: "/#kontakt",
-            view: "Kouknout",
+            view: "Podrobnosti",
         },
         cars: {
             heading: "Nejnovější",
             heading2: "Aktuální nabídka",
-            endHeader: "vozy",
-            endHeader2: "vozů",
+            endHeader: "vozidla",
+            endHeader2: "vozidel",
             text: "Nabízíme osobní a užitková motorová vozidla",
             text2: "Nabízíme osobní a užitková motorová vozidla",
              btnLink:"/auta",
-            btnText: "Více",
+            btnText: "Kompletní nabídka vozidel",
         },
         filters: {
             all: "Všechny",
@@ -267,7 +267,7 @@ export const content = {
                 },
             ],
             pojisteni: "Pojištění a",
-            financovani: "financování vozu",
+            financovani: "financování vozidel",
             accordion: [
                 {
                     heading: "🛡️  Povinné ručení",
@@ -278,12 +278,8 @@ export const content = {
                     text: "Havarijní pojištění je určeno majitelům motorových vozidel. Protože v případě zavinění dopravní nehody druhou stranou je škoda hrazena z povinného ručení viníka, je výhodné zejména pro často havarující řidiče. Způsobit dopravní nehodu může každý, přestože většina řidičů minimalizuje možnost zavinění nehody bezpečnou jízdou. Škoda pak dosahuje řádů desetitisíců až statisíců (u luxusních automobilů i milionů). Pokud není automobil pojištěný, veškeré náklady na opravu (či pořízení nového) musí uhradit majitel. Pokud však automobil havarijně pojištěný je, jeho vlatník zaplatí náklady pouze do výše spoluúčasti."
                 },
                 {
-                    heading: "🔒 Komplexní pojištění",
-                    text: "Komplexní pojištění je spojení povinného ručení, havarijního pojištění vozidla a doplňkových připojištění v jediném pojistném produktu."
-                },
-                {
-                    heading: "💼 Leasing a úvěr",
-                    text: "Nabízíme sjednat leasing, úvěr na všechny tipy automobilů a motocyklů, až do stáří 11 let, od předních leasingových společností na našem trhu."
+                    heading: "💼 Financování vozu",
+                    text: "Nabízíme sjednat spotřebitelský úvěr na všechny tipy automobilů a motocyklů, až do stáří 11 let, od předních leasingových společností na našem trhu."
                 }
             ],
             
@@ -304,8 +300,8 @@ export const content = {
                 link: "/auta?lang=en"
             },
             {
-                name: "Reviews",
-                link: "/#recenze?lang=en"
+                name: "About Us",
+                link: "/#onas?lang=en"
             },
             {
                 name: "Contact",
@@ -330,8 +326,8 @@ export const content = {
                             link: "/auta?lang=en",
                         },
                         {
-                            name: "Reviews",
-                            link: "/#recenze?lang=en",
+                            name: "About Us",
+                            link: "/#onas?lang=en",
                         },
                         {
                             name: "Contact",
@@ -403,7 +399,7 @@ export const content = {
             text: "We offer passenger and commercial motor vehicles.",
             text2: "We offer passenger and commercial motor vehicles.",
             btnLink:"/auta?=lang=en",
-            btnText: "More",
+            btnText: "More vehicles",
 
         },
         filters: {

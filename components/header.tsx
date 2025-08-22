@@ -9,7 +9,7 @@ import {
     type CarouselApi,
   } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import { ArrowRight, BadgeCheck, Car, Globe, Phone } from "lucide-react"
+import { ArrowRight, Phone } from "lucide-react"
 import { content } from "@/lib/content"
 import { useSearchParams } from "next/navigation"
 import { Button } from "./ui/button"
@@ -52,24 +52,10 @@ export default function Header({cars}: {cars: CarWithPhotos[]}){
         <section className=" text-black left-0 w-full h-full backdrop-blur-xl z-10 flex flex-col sm:flex-row p-5 gap-5">
               <div className="w-full sm:w-1/2 h-auto flex flex-col justify-center space-y-6">
                   <h1 className="font-serif text-5xl text-center md:text-7xl">{obsah.header.header}<span className="text-red-600 ">{obsah.header.endHeader}</span> company s.r.o.</h1>
-                  <div className="grid grid-cols-2 xl:grid-cols-4 text-center gap-4 w-full">
-                      <div className="w-full flex flex-col items-center">
-                          <Car className="w-12 h-12"/>
-                          <p>{obsah.header.firstInfo}</p>
-                      </div>
-                      <div className="w-full flex flex-col items-center">
-                          <BadgeCheck className="w-12 h-12"/>
-                          <p>{obsah.header.secInfo}</p>
-                      </div>
-                      <div className="w-full t flex flex-col items-center">
-                          <Globe className="w-12 h-12"/>
-                          <p>{obsah.header.thirdInfo}</p>
-                      </div>
-                      <div className="w-full t flex flex-col items-center">
-                          <Phone className="w-12 h-12"/>
-                          <p>{obsah.header.fourthInfo} <Link className="underline underline-offset-2 decoration-wavy decoration-red-600" href={"tel:+420 608 170 008"}>608 170 008</Link> a <Link className="underline underline-offset-2 decoration-wavy decoration-red-600" href={"tel:+420 602 419 536"}>602 419 536</Link></p>
-                      </div>
-                  </div>
+                  <div className="w-full t flex flex-row gap-4 text-center items-center justify-center">
+                                            <Phone className="w-12 h-12"/>
+                                            <p className="text-xl font-bold"><Link className="underline underline-offset-2 decoration-wavy decoration-red-600" href={"tel:+420 608 170 008"}>608 170 008</Link> a <Link className="underline underline-offset-2 decoration-wavy decoration-red-600" href={"tel:+420 602 419 536"}>602 419 536</Link></p>
+                                        </div>
                  
               </div>
 

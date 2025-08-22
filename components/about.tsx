@@ -10,7 +10,7 @@ import {
     CarouselPrevious,
     type CarouselApi,
   } from "@/components/ui/carousel"
-import { ArrowRight} from "lucide-react"
+import { ArrowRight, BadgeCheck, Car, Globe, Phone} from "lucide-react"
 import { content } from "@/lib/content"
 import { useSearchParams } from "next/navigation"
 import { Button } from "./ui/button"
@@ -68,6 +68,21 @@ export default function About({images}: {images: Type}){
                   <p>
                 {obsah.about.text}
                   </p>
+                  <div className="grid grid-cols-3 text-center gap-4 w-full">
+                                        <div className="w-full flex flex-col items-center">
+                                            <Car className="w-12 h-12"/>
+                                            <p>{obsah.header.firstInfo}</p>
+                                        </div>
+                                        <div className="w-full flex flex-col items-center">
+                                            <BadgeCheck className="w-12 h-12"/>
+                                            <p>{obsah.header.secInfo}</p>
+                                        </div>
+                                        <div className="w-full t flex flex-col items-center">
+                                            <Globe className="w-12 h-12"/>
+                                            <p>{obsah.header.thirdInfo}</p>
+                                        </div>
+                                        
+                                    </div>
                   <div className="w-full grid grid-cols-2 justify-items-center gap-4">
                       <Link href={obsah.about.btnLink2}>
                       <Button size={"sm"} variant={"secondary"}>

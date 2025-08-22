@@ -2,7 +2,6 @@ import Header from "@/components/header";
 import { Suspense } from "react";
 import About from "@/components/about";
 import Services from "@/components/services";
-import ReviewsComp from "@/components/reviews";
 import {  getSautoCardCar} from "@/lib/utils";
 import Contact from "@/components/contact";
 import { sanityFetch } from "@/sanity/lib/client";
@@ -19,10 +18,9 @@ export default async function Home() {
  return (
       <Suspense>
         <Header cars={cars.cars.slice(0,9)}/>
-        <NewestCars cars={cars.cars.slice(10,20)}/>
+        <NewestCars cars={cars.cars.slice(10,15)}/>
         <About images={about}/>
         <Services/>
-        <ReviewsComp items={reviews} />
         <Contact/>
       </Suspense>
   );

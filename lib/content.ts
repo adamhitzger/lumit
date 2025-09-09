@@ -11,7 +11,7 @@ export const content = {
             },
             {
                 name: "Nabídka vozidel",
-                link: "/auta",
+                link: "https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048",
             },
             {
                 name: "O nás",
@@ -37,7 +37,7 @@ export const content = {
                     },
                     {
                         name: "Nabídka vozidel",
-                        link: "/auta",
+                        link: "https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048",
                     },
                     {
                         name: "O nás",
@@ -111,7 +111,7 @@ export const content = {
             endHeader2: "vozidel",
             text: "Nabízíme osobní a užitková motorová vozidla",
             text2: "Nabízíme osobní a užitková motorová vozidla",
-             btnLink:"/auta",
+             btnLink:"https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048",
             btnText: "Kompletní nabídka vozidel",
         },
         filters: {
@@ -128,7 +128,7 @@ export const content = {
             clear: "Vymazat"
         },
         about: {
-            text: "​Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze nehavarovaná vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
+            text: "​Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze prověřená vozidla. Většina našich vozidel pochází od renomovaných leasingových společností, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
              btnText1: "Naše služby",
             btnLink1: "/sluzby",
             btnText2: "Kontaktujte nás",
@@ -223,10 +223,10 @@ export const content = {
                     id: "prodej",
                     heading: "Prodej",
                     endHeading: "vozů",
-                    text: "Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze nehavarovaná vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
+                    text: "Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze prověřená vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
                     img: "/buy.jpeg",
                     btnText: "Nabídka vozů",
-                    btnLink: "/cars"
+                    btnLink: "https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048"
                 },
                 {   
                     id: "dovozy",
@@ -245,7 +245,7 @@ export const content = {
                     id: "zastavarna",
                     heading: "Auto",
                     endHeading: "zastavárna",
-                    text: "Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze nehavarovaná vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
+                    text: "Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze prověřená vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
                     img: "/zastavarna.jpeg",
                 },
                 {   
@@ -297,7 +297,7 @@ export const content = {
             },
             {
                 name: "Car Offer",
-                link: "/auta?lang=en"
+                link: "https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048"
             },
             {
                 name: "About Us",
@@ -323,7 +323,7 @@ export const content = {
                         },
                         {
                             name: "Car Offer",
-                            link: "/auta?lang=en",
+                            link: "https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048",
                         },
                         {
                             name: "About Us",
@@ -398,7 +398,7 @@ export const content = {
             endHeader2: "cars",
             text: "We offer passenger and commercial motor vehicles.",
             text2: "We offer passenger and commercial motor vehicles.",
-            btnLink:"/auta?=lang=en",
+            btnLink:"https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048",
             btnText: "More vehicles",
 
         },
@@ -442,7 +442,7 @@ export const content = {
   cena: "Price",
         },
         about: {
-            text: "We have been operating on the market since 1993 and specialize in the import and sale of passenger and commercial vehicles. We offer only non-accident vehicles with guaranteed origin, condition, and mileage. Most of our vehicles come from reputable leasing companies such as Arval, LeasePlan, and others, from operational leases or directly from authorized brand dealerships. Thanks to this, we provide our customers with assurance of quality and transparency when choosing their new vehicle.",
+            text: "We have been operating on the market since 1993 and specialize in the import and sale of passenger and commercial vehicles. We offer only verified vehicles with guaranteed origin, condition, and mileage. Most of our vehicles come from reputable leasing companies such as Arval, LeasePlan, and others, from operational leases or directly from authorized brand dealerships. Thanks to this, we provide our customers with assurance of quality and transparency when choosing their new vehicle.",
              btnText1: "Our services",
             btnLink1: "/sluzby",
             btnText2: "Contact us",
@@ -511,10 +511,10 @@ sluzby: {
             id: "prodej",
             heading: "Car",
             endHeading: "Sales",
-            text: "We have been active on the market since 1993, specializing in the import and sale of passenger and commercial vehicles. We only offer non-accident vehicles with guaranteed origin, condition, and mileage. Most of our vehicles come from reputable leasing companies such as Arval, LeasePlan, and others, from operational leases or directly from authorized dealerships. Thanks to this, we provide our customers with assurance of quality and transparency when choosing their new vehicle.",
+            text: "We have been active on the market since 1993, specializing in the import and sale of passenger and commercial vehicles. We only offer verified vehicles with guaranteed origin, condition, and mileage. Most of our vehicles come from reputable leasing companies such as Arval, LeasePlan, and others, from operational leases or directly from authorized dealerships. Thanks to this, we provide our customers with assurance of quality and transparency when choosing their new vehicle.",
             img: "/buy.jpeg",
             btnText: "View Cars",
-            btnLink: "/cars?lang=en"
+            btnLink: "https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048"
         },
         {   
             id: "dovozy",

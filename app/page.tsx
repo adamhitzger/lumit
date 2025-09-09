@@ -16,8 +16,8 @@ export default async function Home() {
   cars.cars.reverse();
  return (
       <Suspense>
-        <Header cars={cars.cars.slice(0,9)}/>
-        <NewestCars cars={cars.cars.slice(10,15)}/>
+        <Header cars={cars.cars.slice(0,5)}/>
+        <NewestCars cars={cars.cars.slice(6,10)}/>
         <About images={about}/>
         <Services/>
         <Contact/>

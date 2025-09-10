@@ -245,7 +245,7 @@ export const content = {
                     id: "zastavarna",
                     heading: "Auto",
                     endHeading: "zastavárna",
-                    text: "Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze prověřená vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
+                    text: "U nás najdete prověřená vozidla za výhodné ceny i možnost rychle získat peníze i za svůj vůz. Nabízíme bezpečný prodej, výkup i zástavu automabilů všech značek. Žádné složité papírování - vše vyřídíme na počkání.",
                     img: "/zastavarna.jpeg",
                 },
                 {   
@@ -533,7 +533,7 @@ sluzby: {
             id: "zastavarna",
             heading: "Car",
             endHeading: "Pawnshop",
-            text: "We have been active on the market since 1993, specializing in the import and sale of passenger and commercial vehicles. We only offer non-accident vehicles with guaranteed origin, condition, and mileage. Most of our vehicles come from reputable leasing companies such as Arval, LeasePlan, and others, from operational leases or directly from authorized dealerships. Thanks to this, we provide our customers with assurance of quality and transparency when choosing their new vehicle.",
+            text: "With us you will find proven vehicles at affordable prices and the opportunity to quickly get money for your car. We offer safe sale, purchase and pledge of cars of all brands. No complicated paperwork - we will handle everything while you wait.",
             img: "/zastavarna.jpeg",
         },
         {   

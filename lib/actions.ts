@@ -37,8 +37,8 @@ export async function sendContact(prevState: ActionRes<ContactType>, formData: F
         const data = validatedData.data;
         const sendMail = await transporter.sendMail({
           from: process.env.FROM_EMAIL,
-          to: data.email,
-          subject: "Nový kontakt",
+          to: "info@auto-mt.com",
+          subject: "Nový kontakt z webu",
           text: `Celé jméno: ${data.name}, Email: ${data.email}, Tel. číslo: ${data.tel}, Firma: ${data.company}, Zpráva: ${data.msg}`,
         });
         if (!sendMail.accepted) {

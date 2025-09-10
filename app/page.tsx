@@ -17,7 +17,7 @@ export default async function Home() {
  return (
       <Suspense>
         <Header cars={cars.cars.slice(0,5)}/>
-        <NewestCars cars={cars.cars.slice(6,10)}/>
+        <NewestCars cars={cars.cars.slice(6,11)}/>
         <About images={about}/>
         <Services/>
         <Contact/>

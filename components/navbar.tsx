@@ -29,8 +29,8 @@ export default function Navbar(){
                         {l.name}
                     </Link>
                 ))}
-               <Link href={lang === "cs" ? `${pathname}?lang=en` : `${pathname}?lang=cs`} className="rounded-full bg-white h-fit px-2 py-1 text-2xl ">
-            {en ?"🇨🇿": "🇬🇧" }
+               <Link href={lang === "cs" ? `${pathname}?lang=en` : `${pathname}?lang=cs`} className="rounded-full bg-white text-black h-fit px-2 py-1 text-lg ">
+            {en ?"CZ": "EN" }
         </Link> 
             </div>
              <Sheet>
@@ -43,8 +43,8 @@ export default function Navbar(){
                         {l.name}
                     </Link>
                 ))}
-               <Link href={lang === "cs" ? pathname+"/?lang=en" : pathname+"/?lang=cs"} className="rounded-full bg-white h-fit w-fit px-2 py-1 text-2xl ">
-            {en ?"🇨🇿": "🇬🇧" }
+               <Link href={lang === "cs" ? pathname+"/?lang=en" : pathname+"/?lang=cs"} className="rounded-full bg-white h-fit text-black  w-fit px-2 py-1 text-2xl ">
+            {en ?"CZ": "EN" }
         </Link> 
       </SheetContent>
     </Sheet>

@@ -123,34 +123,49 @@ export async function authenticate() {
   
 }
 
-export async function getSautoCardCar(offset:number =0,limit: number = 20): Promise<{cars: CarWithPhotos[]}> {
+export async function getSautoCardCar(offset:number =0,limit: number = 20): Promise<{cars: CarWithPhotos[], discountCars: CarWithPhotos[]}> {
   const cars: CarWithPhotos[] = [];
+  const discountCars: CarWithPhotos[] = [];
   const session_id = await authenticate();
   const fetchedCars = await listOfCars(session_id, "all", offset, limit);
-
+ 
   for (const c of Object.values(fetchedCars.output.list_of_cars)) {
     const car = await getSautoCar(session_id, c.car_id);
     const id = Number(c.car_id)
     const rawPhotos = await sanityFetch<CarWithPhotos>({ query: getCar, params: {id} });
     const photos: string[] = []
     let title: string="";
+    
     if(rawPhotos?.photos.length >0){
     title = rawPhotos.title
     for(let i =0; i<rawPhotos.photos.length;i++) {
       photos.push(rawPhotos.photos[i]);
     }
+ const discount = rawPhotos.discount && rawPhotos.discount > 0 ? rawPhotos.discount : 0 as number
+    if(discount !== 0){
     const carWithPhotos: CarWithPhotos = {
       ...car.output,
       title,
-      photos
+      photos,
+      discount
     }
+     discountCars.push(carWithPhotos);
    
-     cars.push(carWithPhotos);
+    }else {
+      const carWithPhotos: CarWithPhotos = {
+      ...car.output,
+      title,
+      photos,
+      
+    }
+    cars.push(carWithPhotos);
+    }
     }
     
     
   }
   return{
     cars,
+    discountCars,
   }
 }

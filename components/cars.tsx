@@ -88,7 +88,7 @@ export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:Sanity
     const obsah = content[lang as keyof typeof content].car || content.cs.car 
     const [state, action, isPending] = useActionState(sendContact, actionState)
     const obsah2 = content[lang as keyof typeof content] || content.cs
-    console.log(car)
+    console.log("Sleva:" ,car.discount)
  useEffect(() => {
         if (!state.success && state.message) {
             toast.error(state.message);
@@ -156,7 +156,8 @@ export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:Sanity
 <p className="font-medium">{obsah.gearbox}: <span className="font-light">{en? getLabelById(gearboxList, car.gearbox,"id",lang) : getLabelById(gearboxList, car.gearbox,"id","cs")}</span> 
 <span className="font-light">{en? getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id",lang) : getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id","cs")}</span> </p>
 <p className="font-medium">{obsah.gearbox_level}: <span className="font-light">{en? getLabelById(gearboxLevelList, car.gearbox_level,"id",lang) : getLabelById(gearboxLevelList, car.gearbox_level,"id","cs")}</span></p>
- <span className="font-bold text-4xl">{car.price.toLocaleString("cs-CZ")} Kč</span>
+ {images.discount&& images.discount > 0 ?  <p className="space-x-2"><span className="line-through font-bold text-red-500  text-4xl">{car.price.toLocaleString("cs-CZ")} Kč</span> <span className="font-bold  text-4xl">{(car.price-(car.price*images.discount/100)).toLocaleString("cs-CZ")} Kč</span></p> : <span className="font-bold text-4xl">{car.price.toLocaleString("cs-CZ")} Kč</span>}
+       
                </div>
          </div>
 
@@ -165,6 +166,8 @@ export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:Sanity
          <Carousel 
                   setApi={setApi} 
                   plugins={[plugin.current]}
+                  onMouseEnter={plugin.current.stop}
+                  onMouseLeave={plugin.current.reset}
                   className="w-9/10 mx-auto"
                  >
                     <CarouselContent >
@@ -196,11 +199,13 @@ export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:Sanity
             <h1 className="text-5xl">Výbava</h1>
             <div className="flex flex-row gap-4 flex-wrap">
         {eq.map((e:number, i: number) => {
-          console.log(e)
+          console.log(e);
+          const enWord = getLabelById(equipment, e,"id","en") as string;
+          const csWord = getLabelById(equipment, e,"id","cs") as string;
           return(
             <div key={i} className="relative bg-gray-300 min-w-24  sm:min-w-28 min-h-20 rounded-xl">
                     <div key={i} className="absolute top-0 left-0 p-1 min-h-22 border flex flex-col justify-evenly px-5 rounded-xl min-w-24 sm:min-w-28 backdrop-blur-2xl z-20">
-                    <span className="text-base">{en? getLabelById(equipment, e,"id",lang) : getLabelById(equipment, e,"id","cs")}</span>
+                    <span className="text-base">{en? (enWord.length > 24 ? enWord.slice(0,23) + "..." : enWord)  : (csWord.length > 24 ? csWord.slice(0,23) + "..." : csWord)}</span>
                       </div>
                       <div className="absolute right-0 bottom-0 w-10 h-10 bg-red-400 z-0 rounded-full">
                       </div>

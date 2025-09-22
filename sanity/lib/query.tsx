@@ -42,7 +42,8 @@ export const getCarsByPage = groq`*[_type == "vehicle"][$start...$end]{
 export const getCar = groq`*[_type == "vehicle" && id == $id][0] {
   title,
   id,
-  "photos":images[].asset->url
+  "photos":images[].asset->url,
+  discount,
 }
 `
 

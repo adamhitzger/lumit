@@ -12,6 +12,7 @@ export default async function CarPage({ params }: { params: Promise<{ id: string
     if(!session) throw Error("Nepodařilo se prihlasit")
     const car = await getSautoCar(session,id)
     const carSanity = await sanityFetch<SanityCar>({ query: getCar, params: {id} });
+    console.log("Sleva",carSanity.discount)
     const eq = await listOfEquipment(session, parseInt(param.id))
     console.log("Equipment",eq.output.equipment)
     if(eq.output.equipment){

@@ -143,7 +143,8 @@ export type SautoCar = {
 export type SanityCar = {
 photos: string[],
   title: string;
-  id: number
+  id: number;
+  discount: number | null;
 }
 
 

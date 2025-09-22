@@ -24,7 +24,7 @@ export default function WhatsAppButton(){
          <button id="whatsapp"
         className="fixed bottom-6 right-6 z-40 rounded-full  text-primary items-center justify-center flex flex-row shadow-lg"
       >
-        <SocialIcon url={"https://wa.me/+420608170008?text=Dobrý%20den%2C%20jmenuji%20se"} target='_blank' network={"whatsapp"} />
+        <SocialIcon url={"https://wa.me/+420602419536?text=Dobrý%20den%2C%20jmenuji%20se"} target='_blank' network={"whatsapp"} />
       </button>
     )
 }

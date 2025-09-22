@@ -54,7 +54,8 @@ export default function Header({cars}: {cars: CarWithPhotos[]}){
                   <h1 className="font-serif text-5xl text-center md:text-7xl">{obsah.header.header}<span className="text-red-600 ">{obsah.header.endHeader}</span> company s.r.o.</h1>
                   <div className="w-full t flex flex-row gap-4 text-center items-center justify-center">
                                             <Phone className="w-12 h-12"/>
-                                            <p className="text-xl font-bold"><Link className="underline underline-offset-2 decoration-wavy decoration-red-600" href={"tel:+420 608 170 008"}>608 170 008</Link> a <Link className="underline underline-offset-2 decoration-wavy decoration-red-600" href={"tel:+420 602 419 536"}>602 419 536</Link></p>
+                                            <p className="text-xl font-bold"><Link className="underline underline-offset-2 decoration-wavy decoration-red-600" href={"tel:+420 602 419 536"}>602 419 536</Link> a <Link className="underline underline-offset-2 decoration-wavy decoration-red-600" href={"tel:+420 608 170 008"}>608 170 008</Link> 
+                                            </p>
                                         </div>
                  
               </div>
@@ -64,6 +65,8 @@ export default function Header({cars}: {cars: CarWithPhotos[]}){
                   setApi={setApi} 
                   className="w-full border-2"
                   plugins={[plugin.current]}
+                  onMouseEnter={plugin.current.stop}
+                  onMouseLeave={plugin.current.reset}
                  >
                     <CarouselContent>
                   {cars.map((c: CarWithPhotos, index) => (

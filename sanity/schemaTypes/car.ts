@@ -25,6 +25,12 @@ export const car = defineType({
       of: [{ type: 'image', options: { hotspot: true } }],
       validation: Rule => Rule.required()
     }),
-    
-  ]
+    defineField({
+      name: "discount",
+      title: "Sleva v procentech",
+      type: "number",
+      validation: Rule => Rule.integer().min(0).max(100)
+    }),
+  ],
+ 
 })

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect} from "react"
+import { useState, useEffect, useRef} from "react"
 import {
     Carousel,
     CarouselContent,
@@ -16,10 +16,12 @@ import { useSearchParams } from "next/navigation"
 import { Button } from "./ui/button"
 import Link from "next/link"
 import { About as Type } from "@/types"
+import Autoplay from "embla-carousel-autoplay"
 
 export function Slide({media, isImage}: {media:string, isImage:boolean}){
   const [isLoaded, setIsLoaded] = useState(false)
   console.log(isLoaded)
+ 
   return(
     <div>
     
@@ -31,7 +33,7 @@ export function Slide({media, isImage}: {media:string, isImage:boolean}){
                     className="z-0 rounded-xl"
                     onLoad={() => setIsLoaded(true)}
                       />: 
-                      <video autoPlay controls playsInline className="rounded-xl">
+                      <video autoPlay  playsInline className="rounded-xl">
                         <source src={media} />
                       </video>}
   </div>
@@ -44,6 +46,9 @@ export default function About({images}: {images: Type}){
     const lang = params.get("lang") || "cs";
     const obsah = content[lang as keyof typeof content] || content.cs  
     const [api, setApi] = useState<CarouselApi>()
+     const plugin = useRef(
+     Autoplay({ delay: 13000, stopOnInteraction: true })
+  )
     const [current, setCurrent] = useState(2)
     const [
       count, 
@@ -63,7 +68,7 @@ export default function About({images}: {images: Type}){
       console.log(count)
     return(
         <section id="onas" className=" text-black left-0 w-full h-full backdrop-blur-xl z-10 flex flex-col md:flex-row-reverse p-5 gap-5">
-              <div className="w-full md:w-1/2 h-auto text-right flex flex-col justify-center space-y-6">
+              <div className="w-full md:w-1/2 h-auto  flex flex-col justify-center space-y-6">
                   <h1 className="font-serif text-5xl md:text-7xl">{obsah.about.header}<span className="text-red-600 ">{obsah.about.endHeader}</span></h1>
                   <p>
                 {obsah.about.text}
@@ -104,6 +109,9 @@ export default function About({images}: {images: Type}){
                   <Carousel 
                   setApi={setApi} 
                   className="w-full sm:w-4/5 mx-auto min-h-[400px] "
+                  plugins={[plugin.current]}
+                  onMouseEnter={plugin.current.stop}
+                  onMouseLeave={plugin.current.reset}
                  >
                     <CarouselContent className="h-fit">
                   {images.items.map((i, index) => (

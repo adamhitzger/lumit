@@ -18,7 +18,7 @@ export default function Navbar(){
     const obsah = content[lang as keyof typeof content] || content.cs
     const pathname = usePathname()
     return(
-        <nav className="w-full flex flex-row bg-black p-3 justify-between items-center text-white">
+        <nav className="w-full flex flex-row bg-black p-3 justify-between items-center z-5002 sticky top-0 left-0 text-white">
             <Link href={en ? "/?lang=en" : "/?lang=cs"}>
             <Image src={"/logo.png"} alt="Logo Autobazaru Lumit" width={250} height={80}/>
             </Link>

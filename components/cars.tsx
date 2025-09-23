@@ -156,7 +156,7 @@ export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:Sanity
 <p className="font-medium">{obsah.gearbox}: <span className="font-light">{en? getLabelById(gearboxList, car.gearbox,"id",lang) : getLabelById(gearboxList, car.gearbox,"id","cs")}</span> 
 <span className="font-light">{en? getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id",lang) : getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id","cs")}</span> </p>
 <p className="font-medium">{obsah.gearbox_level}: <span className="font-light">{en? getLabelById(gearboxLevelList, car.gearbox_level,"id",lang) : getLabelById(gearboxLevelList, car.gearbox_level,"id","cs")}</span></p>
- {images.discount&& images.discount > 0 ?  <p className="space-x-2"><span className="line-through font-bold text-red-500  text-4xl">{car.price.toLocaleString("cs-CZ")} Kč</span> <span className="font-bold  text-4xl">{(car.price-(car.price*images.discount/100)).toLocaleString("cs-CZ")} Kč</span></p> : <span className="font-bold text-4xl">{car.price.toLocaleString("cs-CZ")} Kč</span>}
+ {images.discount&& images.discount > 0 ?  <p className="space-x-2"><span className="line-through font-bold text-red-500  text-4xl">{car.price.toLocaleString("cs-CZ")} Kč</span> <span className="font-bold  text-4xl">{(car.price-(images.discount)).toLocaleString("cs-CZ")} Kč</span></p> : <span className="font-bold text-4xl">{car.price.toLocaleString("cs-CZ")} Kč</span>}
        
                </div>
          </div>

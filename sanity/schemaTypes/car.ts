@@ -29,7 +29,7 @@ export const car = defineType({
       name: "discount",
       title: "Sleva v procentech",
       type: "number",
-      validation: Rule => Rule.integer().min(0).max(100)
+      validation: Rule => Rule.integer().min(0)
     }),
   ],
  

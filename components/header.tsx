@@ -84,6 +84,7 @@ export default function Header({cars}: {cars: CarWithPhotos[]}){
                   <span className="mb-5 text-3xl font-bold text-white drop-shadow-lg">
                     {c.title && c.title}
                   </span>
+                   {c.discount&& c.discount > 0 ?  <p className="space-x-2 mb-3"><span className="line-through font-bold text-red-400  text-xl">{c.price.toLocaleString("cs-CZ")} Kč</span> <span className="font-bold text-white text-xl">{(c.price-(c.discount)).toLocaleString("cs-CZ")} Kč</span></p> : null}
                   <Link href={`/auta/${c.car_id}?lang=${lang}`} className="w-40 flex items-center">
                     <Button variant="secondary">
                       {obsah.header.view} 👀

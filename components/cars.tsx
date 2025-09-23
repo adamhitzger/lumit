@@ -298,7 +298,7 @@ return(
                     </div>
                 
                       <Link href={carsContent.btnLink} className="mx-auto">
-                      <Button size={"sm"} className="bg-black text-white font-medium text-2xl p-6">
+                      <Button size={"sm"} variant={"secondary"} className="bg-black text-white font-medium text-2xl p-6">
                           {carsContent.btnText}
                         <ArrowRight/>
                       </Button>

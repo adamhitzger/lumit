@@ -105,10 +105,10 @@ export default function About({images}: {images: Type}){
                   </div>
               </div>
 
-              <div className="w-full h-fit md:w-1/2 sm:my-auto">
+              <div className="w-full h-fit md:w-1/2 sm:my-auto ">
                   <Carousel 
                   setApi={setApi} 
-                  className="w-full sm:w-4/5 mx-auto min-h-[400px] "
+                  className="w-full sm:w-4/5 flex flex-col justify-center  mx-auto min-h-[400px] "
                   plugins={[plugin.current]}
                   onMouseEnter={plugin.current.stop}
                   onMouseLeave={plugin.current.reset}

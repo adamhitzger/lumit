@@ -17,6 +17,18 @@ export const car = defineType({
       type: "number",
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: "nPrice",
+      title: "Cena",
+      type: "number",
+      validation: Rule => Rule.integer().min(0).required()
+    }),
+    defineField({
+      name: "discount",
+      title: "Sleva v procentech",
+      type: "number",
+      validation: Rule => Rule.integer().min(0)
+    }),
     // FOTKY
     defineField({
       name: 'images',
@@ -25,12 +37,7 @@ export const car = defineType({
       of: [{ type: 'image', options: { hotspot: true } }],
       validation: Rule => Rule.required()
     }),
-    defineField({
-      name: "discount",
-      title: "Sleva v procentech",
-      type: "number",
-      validation: Rule => Rule.integer().min(0)
-    }),
+    
   ],
  
 })

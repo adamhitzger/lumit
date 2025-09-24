@@ -44,6 +44,7 @@ export const getCar = groq`*[_type == "vehicle" && id == $id][0] {
   id,
   "photos":images[].asset->url,
   discount,
+  nPrice
 }
 `
 

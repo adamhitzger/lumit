@@ -145,6 +145,7 @@ photos: string[],
   title: string;
   id: number;
   discount: number | null;
+  nPrice: number
 }
 
 

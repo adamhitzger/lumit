@@ -142,7 +142,7 @@ export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:Sanity
   month: '2-digit',
   year: 'numeric',
 })}</span></p>
-<p className="font-medium">{obsah.engine_power}: <span className="font-light">{car.engine_power} kW/{car.engine_power*1.3} PS</span></p>
+<p className="font-medium">{obsah.engine_power}: <span className="font-light">{car.engine_power} kW/{(car.engine_power*1.3).toFixed(0)} PS</span></p>
 <p className="font-medium">{obsah.fuel}:<span className="font-light">{en? getLabelById(fuelList, car.fuel,"fuel_id",lang) : getLabelById(fuelList, car.fuel,"fuel_id","cs")}</span></p>
 <p className="font-medium">{obsah.door}: <span className="font-light">{car.door}</span></p>
 <p className="font-medium">{obsah.capacity}: <span className="font-light">{car.capacity}</span></p>

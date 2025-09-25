@@ -147,7 +147,8 @@ export async function getSautoCardCar(offset:number =0,limit: number = 20): Prom
       ...car.output,
       title,
       photos,
-      discount
+      discount,
+      nPrice: rawPhotos.nPrice
     }
      discountCars.push(carWithPhotos);
    
@@ -156,7 +157,7 @@ export async function getSautoCardCar(offset:number =0,limit: number = 20): Prom
       ...car.output,
       title,
       photos,
-      
+      nPrice: rawPhotos.nPrice
     }
     cars.push(carWithPhotos);
     }

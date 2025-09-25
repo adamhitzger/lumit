@@ -38,7 +38,7 @@ const actionState: ActionRes<ContactType> = {
 
 function CarCard({car}: {car: CarWithPhotos}){
     const params = useSearchParams();
-       const lang = params.get("lang") || "cs";
+    const lang = params.get("lang") || "cs";
     return(
         <aside className="w-full grid grid-cols-1  rounded-lg text-black bg-white p-4">
             <div className="font-serif text-3xl w-full flex items-start flex-col gap-2">
@@ -67,7 +67,7 @@ function CarCard({car}: {car: CarWithPhotos}){
     <Fuel/><span> {lang === "en" ? getLabelById(fuelList, car.fuel,"fuel_id","en") : getLabelById(fuelList, car.fuel,"fuel_id","cs")}</span>
                 </div>
                 <div className="w-fit items-center flex flex-row space-x-2">
-    <HandCoins/><span className="font-medium"> {car.price.toLocaleString("cs-CZ")} Kč</span>
+    <HandCoins/><span className="font-medium"> {car.nPrice} Kč</span>
     </div>
     <Link href={"/auta/"+car.car_id}>
         <Button variant={"secondary"}>

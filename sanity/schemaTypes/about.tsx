@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity'
 
 export const aboutCarousel = defineType({
   name: 'aboutCarousel',
-  title: 'Skece O nás',
+  title: 'Sekce O nás',
   type: 'document',
   fields: [
     defineField({

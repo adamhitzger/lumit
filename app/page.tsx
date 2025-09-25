@@ -10,7 +10,7 @@ import { About as AboutType} from "@/types";
 import NewestCars from "@/components/cars";
 
 export default async function Home() {
- const about: AboutType  = await sanityFetch({ query: getAbout });
+ const about: AboutType  = await sanityFetch<AboutType>({ query: getAbout });
  const cars = await getSautoCardCar(0,100)
  const isDisCars = cars.discountCars.length >0
  console.log("Length",cars.cars.length)

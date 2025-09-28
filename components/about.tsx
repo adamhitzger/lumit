@@ -33,7 +33,7 @@ export function Slide({media, isImage}: {media:string, isImage:boolean}){
                     className="z-0 rounded-xl"
                     onLoad={() => setIsLoaded(true)}
                       />: 
-                      <video autoPlay  playsInline className="rounded-xl">
+                      <video autoPlay controls playsInline className="rounded-xl">
                         <source src={media} />
                       </video>}
   </div>

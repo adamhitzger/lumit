@@ -61,6 +61,10 @@ export const content = {
                         link:"/sluzby#prodej"
                     },
                     {
+                            name: "Chiptunning",
+                            link:"/sluzby#chip"
+                    },
+                    {
                         name: "Dovozy",
                         link:"/sluzby#dovozy"
                     },
@@ -146,6 +150,11 @@ export const content = {
                     text: "Nabízíme široký výběr osobních a užitkových vozidel s garancí původu a stavu. Vyberte si svůj nový vůz ještě dnes!",
                     link: "/sluzby#prodej"
                 },
+                {
+                    heading: "Chiptunning",
+                    text: "Na přání zákazníka nabízíme možnost profesionálního chiptuningu motoru ve spolupráci se společností XTuning, která patří mezi špičku v oboru optimalizace řídicích jednotek motorů v Čr i v Evropě.",
+                    link: "/sluzby#chip"
+                },
                  {
                     heading: "Dovozy",
                     text: "​Nabízíme individuální dovoz vozidel ze zahraničí podle vašich požadavků. vyřídíme vše potřebné od přepravy po registraci",
@@ -227,6 +236,13 @@ export const content = {
                     img: "/buy.png",
                     btnText: "Nabídka vozů",
                     btnLink: "https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048"
+                },
+                {   
+                    id: "chip",
+                    heading: "Chiptunning",
+                    endHeading: "vozů",
+                    text: "Působíme na trhu od roku 1993 a specializujeme se na dovoz a prodej osobních a užitkových vozidel. Nabízíme pouze prověřená vozidla s garantovaným původem, stavem a počtem najetých kilometrů. Většina našich vozidel pochází od renomovaných leasingových společností, jako jsou Arval, LeasePlan a další, z operativních leasingů nebo přímo od autorizovaných zastoupení automobilových značek. Díky tomu poskytujeme našim zákazníkům jistotu kvality a transparentnosti při výběru jejich nového vozidla.",
+                    img: "/chip.png",
                 },
                 {   
                     id: "dovozy",
@@ -347,6 +363,10 @@ export const content = {
                             link:"/sluzby?lang=en#prodej"
                         },
                         {
+                            name: "Chiptunning",
+                            link:"/sluzby?lang=en#chip"
+                        },
+                        {
                             name: "Car Imports",
                             link:"/sluzby?lang=en#dovozy"
                         },
@@ -461,6 +481,11 @@ export const content = {
             link: "/sluzby#prodej?lang=en"
         },
         {
+                    heading: "Chiptunning",
+                    text: "At the customer’s request, we offer the option of professional engine chiptuning in cooperation with the renowned company XTuning, which ranks among the leaders in ECU optimization in the Czechia and across Europe.",
+                    link: "/sluzby#chip?lang=en"
+        },
+        {
             heading: "Vehicle Imports",
             text: "We offer personalized import of vehicles from abroad according to your requirements. We handle everything from transport to registration.",
             link: "/sluzby#dovozy?lang=en"
@@ -516,6 +541,13 @@ sluzby: {
             btnText: "View Cars",
             btnLink: "https://www.sauto.cz/detail-prodejce/lumit-company-sro/2048"
         },
+         {   
+                    id: "chip",
+                    heading: "Car",
+                    endHeading: "Chiptunning",
+                    text: "At the customer’s request, we offer the option of professional engine chiptuning in cooperation with the renowned company XTuning, which ranks among the leaders in ECU optimization in the Czech Republic and across Europe. XTuning has long specialized in the development and testing of software modifications that improve engine performance, increase torque, and often help reduce fuel consumption — all while maintaining maximum reliability and engine longevity. Thanks to our partnership, we can provide these services directly to you, without the need to look for an external supplier or travel to another workshop.",
+                    img: "/chip.png",
+                },
         {   
             id: "dovozy",
             heading: "Vehicle Imports",

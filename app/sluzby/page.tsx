@@ -69,7 +69,7 @@ export default function Sluzby(){
                       
                   </div>
                 </div>
-{i===1 ?
+{i===2 ?
 <div className="grid grid-cols-3 lg:grid-cols-2 gap-3 w-full md:w-1/2 items-center">
     {leasingovky.map((s: string, i: number) => (
         <Image
@@ -78,7 +78,7 @@ export default function Sluzby(){
                     src={"/leaselogos/"+s}
                     width={804}
                     height={804}
-                    className="rounded-xl w-full md:w-1/2  shadow-red-500"
+                    className="rounded-xl w-full md:w-1/2  transition-all duration-300 hover:scale-110 hover:shadow-red-500"
                 />
 
     ))}
@@ -88,7 +88,7 @@ export default function Sluzby(){
                     src={s.img}
                     width={1204}
                     height={1204}
-                    className="rounded-xl w-full md:w-1/2 shadow-xl shadow-red-500"
+                    className="rounded-xl w-full md:w-1/2 shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-red-500"
                 />
 }
             </section>
@@ -108,8 +108,8 @@ export default function Sluzby(){
  
 </Accordion>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4  gap-3 w-full md:w-1/2 items-center">
-                {step === 3 ? 
+            <div className={`grid justify-items-center grid-cols-2  gap-3 w-full md:w-1/2 items-center`}>
+                {step === 2 ? 
                 leasingovky3.map((s: string, i: number) => (
         <Image
                     alt={"Leasingové společnosti"}
@@ -117,7 +117,7 @@ export default function Sluzby(){
                     src={"/leaselogos/"+s}
                     width={1804}
                     height={1804}
-                    className="rounded-xl w-full md:w-1/2  shadow-red-500"
+                    className="rounded-xl w-full md:w-1/2  transition-all duration-300 hover:scale-110 hover:shadow-red-500"
                 />
 
     ))
@@ -129,7 +129,7 @@ export default function Sluzby(){
                     src={"/leaselogos/"+s}
                     width={804}
                     height={804}
-                    className="rounded-xl w-full md:w-1/2  shadow-red-500"
+                    className="rounded-xl w-full md:w-1/2  transition-all duration-300 hover:scale-110 hover:shadow-red-500"
                 />
 
     ))

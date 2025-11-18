@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.0.1",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dialog": "^1.1.13",
     "@radix-ui/react-label": "^2.1.6",
@@ -26,7 +27,7 @@
     "lucide-react": "^0.508.0",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^3.12.0",
-    "next": "15.3.2",
+    "next": "^16.0.1",
     "next-sanity": "^9.12.3",
     "nodemailer": "^7.0.3",
     "query-string": "^9.2.0",
@@ -35,7 +36,7 @@
     "react-hot-toast": "^2.5.2",
     "react-is": "^19.1.1",
     "react-map-gl": "^8.0.4",
-    "react-social-icons": "^6.24.0",
+    "react-social-icons": "^6.25.0",
     "sanity": "^3.99.0",
     "styled-components": "^6.1.19",
     "tailwind-merge": "^3.2.0",

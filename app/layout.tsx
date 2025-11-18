@@ -6,7 +6,8 @@ import Footer from "@/components/footer";
 import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import WhatsAppButton from "@/components/whatsapp";
-
+import { GoogleAnalytics} from "@next/third-parties/google"
+ 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -78,8 +79,8 @@ export default function RootLayout({
         <WhatsAppButton/>
         <Footer/>
         </Suspense>
-        <Toaster
-        />
+        <Toaster/>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_KEY as string}/>
       </body>
     </html>
   );

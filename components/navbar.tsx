@@ -10,6 +10,9 @@ import {
     SheetTrigger,
   } from "@/components/ui/sheet"
 import { Menu } from "lucide-react";
+import 'react-social-icons/facebook'
+import 'react-social-icons/instagram'
+import { SocialIcon } from "react-social-icons/component";
 
 export default function Navbar(){
     const params = useSearchParams();
@@ -32,6 +35,10 @@ export default function Navbar(){
                <Link href={lang === "cs" ? `${pathname}?lang=en` : `${pathname}?lang=cs`} className="rounded-full bg-white text-black h-fit px-2 py-1 text-lg ">
             {en ?"CZ": "EN" }
         </Link> 
+        <SocialIcon url={"https://www.facebook.com/people/LUMIT-company/61580291581127/#"} network={"facebook"}/>
+        
+        <SocialIcon url={"https://www.instagram.com/lumit_company/#"} network={"instagram"}/>
+           
             </div>
              <Sheet>
       <SheetTrigger asChild>
@@ -46,6 +53,10 @@ export default function Navbar(){
                <Link href={lang === "cs" ? pathname+"/?lang=en" : pathname+"/?lang=cs"} className="rounded-full bg-white h-fit text-black  w-fit px-2 py-1 text-2xl ">
             {en ?"CZ": "EN" }
         </Link> 
+         <SocialIcon url={"https://www.facebook.com/people/LUMIT-company/61580291581127/#"} network={"facebook"}/>
+        
+        <SocialIcon url={"https://www.instagram.com/lumit_company/#"} network={"instagram"}/>
+       
       </SheetContent>
     </Sheet>
         </nav>

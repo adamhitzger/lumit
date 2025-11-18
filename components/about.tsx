@@ -17,6 +17,9 @@ import { Button } from "./ui/button"
 import Link from "next/link"
 import { About as Type } from "@/types"
 import Autoplay from "embla-carousel-autoplay"
+import 'react-social-icons/facebook'
+import 'react-social-icons/instagram'
+import { SocialIcon } from "react-social-icons/component";
 
 export function Slide({media, isImage}: {media:string, isImage:boolean}){
   const [isLoaded, setIsLoaded] = useState(false)
@@ -86,7 +89,12 @@ export default function About({images}: {images: Type}){
                                             <Globe className="w-12 h-12"/>
                                             <p>{obsah.header.thirdInfo}</p>
                                         </div>
-                                        
+                                        <div className="w-full flex flex-row justify-evenly col-span-3">
+       <SocialIcon url={"https://www.facebook.com/people/LUMIT-company/61580291581127/#"} network={"facebook"}/>
+        
+        <SocialIcon url={"https://www.instagram.com/lumit_company/#"} network={"instagram"}/>
+       
+                                        </div>
                                     </div>
                   <div className="w-full grid grid-cols-2 justify-items-center gap-4">
                       <Link href={obsah.about.btnLink2}>

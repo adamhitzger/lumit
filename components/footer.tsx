@@ -6,6 +6,7 @@ import Link from "next/link";
 import {content} from "@/lib/content"
 import 'react-social-icons/facebook'
 import 'react-social-icons/instagram'
+import 'react-social-icons/tiktok'
 import { SocialIcon } from "react-social-icons/component";
 
 export default function Footer(){
@@ -25,6 +26,7 @@ export default function Footer(){
             <SocialIcon url={"https://www.facebook.com/people/LUMIT-company/61580291581127/#"} network={"facebook"}/>
 
 <SocialIcon url={"https://www.instagram.com/lumit_company/#"} network={"instagram"}/>
+<SocialIcon url={"https://www.tiktok.com/@lumitcompany"} network={"tiktok"}/>
             </div>
             </div>
             

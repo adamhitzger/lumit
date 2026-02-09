@@ -25,7 +25,7 @@ export const car = defineType({
     }),
     defineField({
       name: "discount",
-      title: "Sleva v procentech",
+      title: "Sleva v Kč",
       type: "number",
       validation: Rule => Rule.integer().min(0)
     }),

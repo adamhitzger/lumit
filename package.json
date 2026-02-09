@@ -27,7 +27,7 @@
     "lucide-react": "^0.508.0",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^3.12.0",
-    "next": "^16.0.1",
+    "next": "16.0.10",
     "next-sanity": "^9.12.3",
     "nodemailer": "^7.0.3",
     "query-string": "^9.2.0",

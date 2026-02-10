@@ -205,7 +205,7 @@ export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:Sanity
           return(
             <div key={i} className="relative bg-gray-300 min-w-24  sm:min-w-28 min-h-20 rounded-xl">
                     <div key={i} className="absolute top-0 left-0 p-1 min-h-22 border flex flex-col justify-evenly px-5 rounded-xl min-w-24 sm:min-w-28 backdrop-blur-2xl z-20">
-                    <span className="text-base">{en? (enWord.length > 24 ? enWord.slice(0,23) + "..." : enWord)  : (csWord.length > 24 ? csWord.slice(0,23) + "..." : csWord)}</span>
+                    <span className="text-base">{en ? (enWord.length > 24 ? enWord.slice(0,23) + "..." : enWord)  : (csWord && csWord.length > 24 ? csWord.slice(0,23) + "..." : csWord)}</span>
                       </div>
                       <div className="absolute right-0 bottom-0 w-10 h-10 bg-red-400 z-0 rounded-full">
                       </div>

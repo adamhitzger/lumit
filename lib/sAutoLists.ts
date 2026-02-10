@@ -369,7 +369,8 @@ export const equipment = [
   { id: 327, cs: "Příplatkový audiosystém", en: "Optional sound system" },
   { id: 328, cs: "Sedadla Alcantara", en: "Alcantara seats" },
   { id: 329, cs: "Sportovní paket", en: "Sport package" },
-  { id: 330, cs: "Elektrické dovírání dveří", en: "Electric soft-close doors" }
+  { id: 330, cs: "Elektrické dovírání dveří", en: "Electric soft-close doors" },
+  { id: 331, cs: "AUX", en: "AUX" }
 ];
 
 export const cars = [

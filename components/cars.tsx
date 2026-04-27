@@ -39,6 +39,7 @@ const actionState: ActionRes<ContactType> = {
 function CarCard({car}: {car: CarWithPhotos}){
     const params = useSearchParams();
     const lang = params.get("lang") || "cs";
+    console.log(car)
     return(
         <aside className="w-full grid grid-cols-1  rounded-lg text-black bg-white p-4">
             <div className="font-serif text-3xl w-full flex items-start flex-col gap-2">
@@ -121,7 +122,7 @@ export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:Sanity
           setCurrent(api.selectedScrollSnap() + 1)  
         })
       }, [api])
-      console.log(count)
+      console.log(car.vat_deductable)
     return(
        <>
        <section className="w-full flex flex-col-reverse md:flex-row space-4 p-5">
@@ -156,7 +157,7 @@ export function SignleCar({car,  images, eq}: {car: CarWithPhotos, images:Sanity
 <p className="font-medium">{obsah.gearbox}: <span className="font-light">{en? getLabelById(gearboxList, car.gearbox,"id",lang) : getLabelById(gearboxList, car.gearbox,"id","cs")}</span> 
 <span className="font-light">{en? getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id",lang) : getLabelById(gearboxAutoTypeList, car.gearbox_auto_type,"id","cs")}</span> </p>
 <p className="font-medium">{obsah.gearbox_level}: <span className="font-light">{en? getLabelById(gearboxLevelList, car.gearbox_level,"id",lang) : getLabelById(gearboxLevelList, car.gearbox_level,"id","cs")}</span></p>
- {images.discount&& images.discount > 0 ?  <p className="space-x-2"><span className="line-through font-bold text-red-500  text-4xl">{images.nPrice.toLocaleString("cs-CZ")} Kč</span> <span className="font-bold  text-4xl">{(images.nPrice-(images.discount)).toLocaleString("cs-CZ")} Kč</span></p> : <span className="font-bold text-4xl">{images.nPrice.toLocaleString("cs-CZ")} Kč</span>}
+{images.discount&& images.discount > 0 ?  <p className="space-x-2"><span className="line-through font-bold text-red-500  text-4xl">{images.nPrice.toLocaleString("cs-CZ")} Kč</span> <span className="font-bold  text-4xl">{(images.nPrice-(images.discount)).toLocaleString("cs-CZ")} Kč</span></p> : <span className="font-bold text-4xl">{images.nPrice.toLocaleString("cs-CZ")} Kč</span>}  {car.vat_deductable === 0 && <span className="text-xl font-semibold text-red-500">{en? "VAT deductable" :"možný odpočet DPH"}</span> }
        
                </div>
          </div>

@@ -5,6 +5,11 @@ export const aboutCarousel = defineType({
   title: 'Sekce O nás',
   type: 'document',
   fields: [
+     defineField({
+      name: 'fbpost',
+      title: 'FB odkaz na příspěvek',
+      type: 'string'
+    }),
     defineField({
       name: 'items',
       title: 'Položky karuselu',

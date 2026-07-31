@@ -11,11 +11,13 @@ export const getHeader = groq`*[_type == "headerCarousel"][0]{
 }`
 export const getAbout = groq`*[_type == "aboutCarousel"][0]{
   _id,
+  fbpost,
   items[]{
     isImage,
     "media": media.asset->url,
   }
 }`
+
 
 export const getCars = groq`*[_type == "vehicle"]{
   _id,

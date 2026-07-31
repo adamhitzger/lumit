@@ -8,6 +8,7 @@ import { sanityFetch } from "@/sanity/lib/client";
 import { getAbout} from "@/sanity/lib/query";
 import { About as AboutType} from "@/types";
 import NewestCars from "@/components/cars";
+import FbPopup from "@/components/fb-popup";
 
 export default async function Home() {
  const about: AboutType  = await sanityFetch<AboutType>({ query: getAbout });
@@ -22,6 +23,7 @@ export default async function Home() {
         <About images={about}/>
         <Services/>
         <Contact/>
+        <FbPopup fbpost={about?.fbpost}/>
       </Suspense>
   );
 }

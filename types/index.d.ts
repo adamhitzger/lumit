@@ -253,6 +253,7 @@ export type HeaderCarousel = {
 export type About = {
   _id: string; // Sanity document ID
   _type: 'aboutCarousel';
+  fbpost: string;
   items: Array<{
     isImage: boolean; // True for image, false for video
     media: string; // URL to image or MP4 video

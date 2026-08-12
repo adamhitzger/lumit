@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { Suspense } from "react";
 import WhatsAppButton from "@/components/whatsapp";
 import { GoogleAnalytics} from "@next/third-parties/google"
+import Script from "next/script";
  
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,6 +74,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${inSerif.variable} antialiased bg-gray-200 overflow-x-hidden`}
       >
+            <Script src="https://t.contentsquare.net/uxa/e9b2dbdd9d401.js" defer/>
+      <Script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="565579ac-66e9-4864-9a46-6e27c457de3c" data-blockingmode="auto" type="text/javascript"/>
+      
         <Suspense>
         <Navbar/>
         {children}

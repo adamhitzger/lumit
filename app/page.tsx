@@ -2,7 +2,7 @@ import Header from "@/components/header";
 import { Suspense } from "react";
 import About from "@/components/about";
 import Services from "@/components/services";
-import {  getSautoCardCar} from "@/lib/utils";
+import {  getSautoCardCar} from "@/lib/sauto";
 import Contact from "@/components/contact";
 import { sanityFetch } from "@/sanity/lib/client";
 import { getAbout} from "@/sanity/lib/query";

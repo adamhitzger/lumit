@@ -50,6 +50,15 @@ export const getCar = groq`*[_type == "vehicle" && id == $id][0] {
 }
 `
 
+export const getCarsByIds = groq`*[_type == "vehicle" && id in $ids] {
+  title,
+  id,
+  "photos":images[].asset->url,
+  discount,
+  nPrice
+}
+`
+
 export const getCarsFiltered = groq`*[_type == "vehicle" &&(
     !$brand || manufacturer_id == $brand
   ) && (

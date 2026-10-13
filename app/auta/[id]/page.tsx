@@ -1,6 +1,6 @@
 import { SignleCar } from "@/components/cars";
 import { sanityFetch } from "@/sanity/lib/client";
-import { authenticate,  getSautoCar, listOfEquipment } from "@/lib/utils";
+import { authenticate,  getSautoCar, listOfEquipment } from "@/lib/sauto";
 import { getCar } from "@/sanity/lib/query";
 import { SanityCar } from "@/types";
 
@@ -10,9 +10,11 @@ export default async function CarPage({ params }: { params: Promise<{ id: string
     const id = Number(param.id)
     const equipments:number[] = []
     if(!session) throw Error("Nepodařilo se prihlasit")
-    const car = await getSautoCar(session,id)
-    const carSanity = await sanityFetch<SanityCar>({ query: getCar, params: {id} });
-    const eq = await listOfEquipment(session, parseInt(param.id))
+    const [car, carSanity, eq] = await Promise.all([
+        getSautoCar(session,id),
+        sanityFetch<SanityCar>({ query: getCar, params: {id} }),
+        listOfEquipment(session, id),
+    ])
     console.log("Equipment",eq.output.equipment)
     if(eq.output.equipment){
         for (const c of Object.values(eq.output.equipment)) {

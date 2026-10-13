@@ -1,5 +1,5 @@
 import { Cars } from "@/components/cars";
-import { getSautoCardCar} from "@/lib/utils";
+import { getSautoCardCar} from "@/lib/sauto";
 
 export default async function CarsPage(){
     const carsLen = await getSautoCardCar(0,100)

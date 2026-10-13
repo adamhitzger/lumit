@@ -8,6 +8,7 @@ import { Suspense } from "react";
 import WhatsAppButton from "@/components/whatsapp";
 import { GoogleAnalytics} from "@next/third-parties/google"
 import Script from "next/script";
+import { connection } from "next/server";
  
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,11 +65,13 @@ export const metadata: Metadata = {
 };
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Bez toho by se kvůli useSearchParams (jazyk) celá stránka vykreslovala až v prohlížeči
+  await connection();
   return (
     <html lang="en">
       <body
